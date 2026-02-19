@@ -1,64 +1,84 @@
 'use client';
 
-import { motion } from 'motion/react';
 import { Check } from 'lucide-react';
+import { motion } from 'motion/react';
+import { Button } from '@/components/ui/button';
 
 export function CTASection() {
   return (
-    <section className="relative py-32 bg-white">
-      <div className="max-w-4xl mx-auto px-6 text-center">
+    <section className="relative bg-white py-32">
+      <div className="mx-auto max-w-4xl px-6 text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-5xl lg:text-6xl font-normal mb-6 text-[#2C2416] leading-tight" style={{ fontFamily: 'Lora, serif' }}>
+          <h2
+            className="mb-6 font-normal text-5xl text-[#2C2416] leading-tight lg:text-6xl"
+            style={{ fontFamily: 'Lora, serif' }}
+          >
             Start tracking with
             <br />
             precision today
           </h2>
 
-          <p className="text-xl text-[#6B5D4F] mb-12 max-w-2xl mx-auto leading-relaxed" style={{ fontFamily: 'DM Sans, sans-serif' }}>
-            No more searching. No more guessing. Just accurate tracking in seconds.
+          <p
+            className="mx-auto mb-12 max-w-2xl text-[#6B5D4F] text-xl leading-relaxed"
+            style={{ fontFamily: 'DM Sans, sans-serif' }}
+          >
+            No more searching. No more guessing. Just accurate tracking in
+            seconds.
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-wrap justify-center gap-4 mb-12">
-            <motion.button
+          <div className="mb-12 flex flex-wrap justify-center gap-4">
+            <motion.div
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="px-10 py-4 bg-[#C9A87C] text-white rounded-xl hover:bg-[#B89968] transition-all shadow-sm"
             >
-              <span style={{ fontFamily: 'DM Sans, sans-serif', fontWeight: 500 }}>
+              <Button 
+                variant="landing-primary" 
+                size="landing"
+                style={{ fontFamily: 'DM Sans, sans-serif' }}
+              >
                 Start free trial
-              </span>
-            </motion.button>
-            
-            <motion.button
+              </Button>
+            </motion.div>
+
+            <motion.div
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="px-10 py-4 border border-[#E8D5B5] text-[#6B5D4F] rounded-xl hover:bg-[#FEFBF6] transition-all"
             >
-              <span style={{ fontFamily: 'DM Sans, sans-serif', fontWeight: 500 }}>
+              <Button 
+                variant="landing-secondary" 
+                size="landing"
+                style={{ fontFamily: 'DM Sans, sans-serif' }}
+              >
                 See demo
-              </span>
-            </motion.button>
+              </Button>
+            </motion.div>
           </div>
 
           {/* Features */}
-          <div className="flex flex-wrap justify-center gap-8 mb-16 text-sm text-[#8B7355]">
+          <div className="mb-16 flex flex-wrap justify-center gap-8 text-[#8B7355] text-sm">
             <div className="flex items-center gap-2">
-              <Check className="w-4 h-4 text-[#C9A87C]" />
-              <span style={{ fontFamily: 'DM Sans, sans-serif' }}>14-day free trial</span>
+              <Check className="h-4 w-4 text-[#C9A87C]" />
+              <span style={{ fontFamily: 'DM Sans, sans-serif' }}>
+                14-day free trial
+              </span>
             </div>
             <div className="flex items-center gap-2">
-              <Check className="w-4 h-4 text-[#C9A87C]" />
-              <span style={{ fontFamily: 'DM Sans, sans-serif' }}>No credit card required</span>
+              <Check className="h-4 w-4 text-[#C9A87C]" />
+              <span style={{ fontFamily: 'DM Sans, sans-serif' }}>
+                No credit card required
+              </span>
             </div>
             <div className="flex items-center gap-2">
-              <Check className="w-4 h-4 text-[#C9A87C]" />
-              <span style={{ fontFamily: 'DM Sans, sans-serif' }}>Cancel anytime</span>
+              <Check className="h-4 w-4 text-[#C9A87C]" />
+              <span style={{ fontFamily: 'DM Sans, sans-serif' }}>
+                Cancel anytime
+              </span>
             </div>
           </div>
 
@@ -68,31 +88,43 @@ export function CTASection() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="pt-12 border-t border-[#E8D5B5]/30"
+            className="border-[#E8D5B5]/30 border-t pt-12"
           >
-            <p className="text-sm text-[#8B7355] mb-8" style={{ fontFamily: 'DM Sans, sans-serif' }}>
+            <p
+              className="mb-8 text-[#8B7355] text-sm"
+              style={{ fontFamily: 'DM Sans, sans-serif' }}
+            >
               Trusted by thousands of athletes and fitness enthusiasts
             </p>
-            <div className="flex justify-center items-center gap-12">
+            <div className="flex items-center justify-center gap-12">
               <div className="text-center">
-                <div className="text-3xl font-medium text-[#2C2416] mb-1" style={{ fontFamily: 'Lora, serif' }}>
+                <div
+                  className="mb-1 font-medium text-3xl text-[#2C2416]"
+                  style={{ fontFamily: 'Lora, serif' }}
+                >
                   4.9
                 </div>
-                <div className="text-xs text-[#8B7355]">App Store</div>
+                <div className="text-[#8B7355] text-xs">App Store</div>
               </div>
-              <div className="w-px h-12 bg-[#E8D5B5]" />
+              <div className="h-12 w-px bg-[#E8D5B5]" />
               <div className="text-center">
-                <div className="text-3xl font-medium text-[#2C2416] mb-1" style={{ fontFamily: 'Lora, serif' }}>
+                <div
+                  className="mb-1 font-medium text-3xl text-[#2C2416]"
+                  style={{ fontFamily: 'Lora, serif' }}
+                >
                   10k+
                 </div>
-                <div className="text-xs text-[#8B7355]">Users</div>
+                <div className="text-[#8B7355] text-xs">Users</div>
               </div>
-              <div className="w-px h-12 bg-[#E8D5B5]" />
+              <div className="h-12 w-px bg-[#E8D5B5]" />
               <div className="text-center">
-                <div className="text-3xl font-medium text-[#2C2416] mb-1" style={{ fontFamily: 'Lora, serif' }}>
+                <div
+                  className="mb-1 font-medium text-3xl text-[#2C2416]"
+                  style={{ fontFamily: 'Lora, serif' }}
+                >
                   2M+
                 </div>
-                <div className="text-xs text-[#8B7355]">Meals tracked</div>
+                <div className="text-[#8B7355] text-xs">Meals tracked</div>
               </div>
             </div>
           </motion.div>

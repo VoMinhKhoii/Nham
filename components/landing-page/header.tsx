@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'motion/react';
+import { Button } from '@/components/ui/button';
 
 export function Header() {
   return (
@@ -8,35 +9,38 @@ export function Header() {
       initial={{ y: -20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6 }}
-      className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-[#FEFBF6]/80 border-b border-[#E8D5B5]/30"
+      className="fixed top-0 right-0 left-0 z-50 border-[#E8D5B5]/30 border-b bg-[#FEFBF6]/80 backdrop-blur-xl"
     >
-      <div className="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
         {/* Logo */}
         <div className="flex items-center gap-2">
-          <div className="text-2xl font-medium text-[#2C2416]" style={{ fontFamily: 'Lora, serif' }}>
-            PrecisionTrack
+          <div
+            className="font-medium text-2xl text-[#2C2416]"
+            style={{ fontFamily: 'Lora, serif' }}
+          >
+            Nham
           </div>
         </div>
 
         {/* Nav Links */}
-        <nav className="hidden md:flex items-center gap-8">
-          <a 
-            href="#features" 
-            className="text-sm text-[#6B5D4F] hover:text-[#2C2416] transition-colors"
+        <nav className="hidden items-center gap-8 md:flex">
+          <a
+            href="#features"
+            className="text-[#6B5D4F] text-sm transition-colors hover:text-[#2C2416]"
             style={{ fontFamily: 'DM Sans, sans-serif' }}
           >
             Features
           </a>
-          <a 
-            href="#how" 
-            className="text-sm text-[#6B5D4F] hover:text-[#2C2416] transition-colors"
+          <a
+            href="#how"
+            className="text-[#6B5D4F] text-sm transition-colors hover:text-[#2C2416]"
             style={{ fontFamily: 'DM Sans, sans-serif' }}
           >
             How it works
           </a>
-          <a 
-            href="#pricing" 
-            className="text-sm text-[#6B5D4F] hover:text-[#2C2416] transition-colors"
+          <a
+            href="#pricing"
+            className="text-[#6B5D4F] text-sm transition-colors hover:text-[#2C2416]"
             style={{ fontFamily: 'DM Sans, sans-serif' }}
           >
             Pricing
@@ -45,18 +49,20 @@ export function Header() {
 
         {/* CTA Buttons */}
         <div className="flex items-center gap-4">
-          <button 
-            className="hidden sm:block text-sm text-[#6B5D4F] hover:text-[#2C2416] transition-colors"
+          <Button
+            variant="landing-ghost"
+            className="hidden sm:block"
             style={{ fontFamily: 'DM Sans, sans-serif' }}
           >
             Sign in
-          </button>
-          <button 
-            className="px-6 py-2.5 bg-[#C9A87C] text-white rounded-lg hover:bg-[#B89968] transition-all"
-            style={{ fontFamily: 'DM Sans, sans-serif', fontWeight: 500 }}
+          </Button>
+          <Button
+            variant="header-cta"
+            size="header"
+            style={{ fontFamily: 'DM Sans, sans-serif' }}
           >
             Get started
-          </button>
+          </Button>
         </div>
       </div>
     </motion.header>
