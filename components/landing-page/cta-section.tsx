@@ -33,12 +33,9 @@ export function CTASection() {
 
           {/* CTA Buttons */}
           <div className="mb-12 flex flex-wrap justify-center gap-4">
-            <motion.div
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-            >
-              <Button 
-                variant="landing-primary" 
+            <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+              <Button
+                variant="landing-primary"
                 size="landing"
                 style={{ fontFamily: 'DM Sans, sans-serif' }}
               >
@@ -46,12 +43,9 @@ export function CTASection() {
               </Button>
             </motion.div>
 
-            <motion.div
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-            >
-              <Button 
-                variant="landing-secondary" 
+            <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+              <Button
+                variant="landing-secondary"
                 size="landing"
                 style={{ fontFamily: 'DM Sans, sans-serif' }}
               >
