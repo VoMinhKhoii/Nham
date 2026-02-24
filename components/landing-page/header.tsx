@@ -1,9 +1,12 @@
 'use client';
 
 import { motion } from 'motion/react';
+import { useAuthDialog } from '@/components/auth/auth-provider';
 import { Button } from '@/components/ui/button';
 
 export function Header() {
+  const { openDialog } = useAuthDialog();
+
   return (
     <motion.header
       initial={{ y: -20, opacity: 0 }}
@@ -53,6 +56,7 @@ export function Header() {
             variant="landing-ghost"
             className="hidden sm:block"
             style={{ fontFamily: 'DM Sans, sans-serif' }}
+            onClick={() => openDialog('sign-in')}
           >
             Sign in
           </Button>
@@ -60,6 +64,7 @@ export function Header() {
             variant="header-cta"
             size="header"
             style={{ fontFamily: 'DM Sans, sans-serif' }}
+            onClick={() => openDialog('sign-up')}
           >
             Get started
           </Button>

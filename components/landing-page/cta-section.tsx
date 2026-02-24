@@ -2,9 +2,11 @@
 
 import { Check } from 'lucide-react';
 import { motion } from 'motion/react';
+import { useAuthDialog } from '@/components/auth/auth-provider';
 import { Button } from '@/components/ui/button';
 
 export function CTASection() {
+  const { openDialog } = useAuthDialog();
   return (
     <section className="relative bg-white py-32">
       <div className="mx-auto max-w-4xl px-6 text-center">
@@ -38,6 +40,7 @@ export function CTASection() {
                 variant="landing-primary"
                 size="landing"
                 style={{ fontFamily: 'DM Sans, sans-serif' }}
+                onClick={() => openDialog('sign-up')}
               >
                 Start free trial
               </Button>

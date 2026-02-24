@@ -3,11 +3,13 @@
 import { ArrowRight, Sparkles } from 'lucide-react';
 import { motion, useScroll, useTransform } from 'motion/react';
 import { useEffect, useState } from 'react';
+import { useAuthDialog } from '@/components/auth/auth-provider';
 import { Button } from '@/components/ui/button';
 
 export function Hero() {
   const { scrollY } = useScroll();
   const y = useTransform(scrollY, [0, 900], [0, 30]);
+  const { openDialog } = useAuthDialog();
 
   const [typedText, setTypedText] = useState('');
   const fullText = '2 mực kho mặn + 50gr nạc dăm luộc + 1 chén cơm + canh chua';
@@ -84,7 +86,12 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="flex flex-col gap-4 sm:flex-row"
           >
-            <Button variant="hero-dark" size="hero" className="group">
+            <Button
+              variant="hero-dark"
+              size="hero"
+              className="group"
+              onClick={() => openDialog('sign-up')}
+            >
               <span className="font-medium tracking-wide">
                 Start Tracking Free
               </span>
