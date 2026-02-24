@@ -1,13 +1,13 @@
 'use client';
 
-import { 
-  Header, 
-  Hero, 
-  ProblemSection, 
-  SolutionSection, 
-  CTASection, 
-  Footer 
-} from "@/components/landing-page";
+import {
+  CTASection,
+  Footer,
+  Header,
+  Hero,
+  ProblemSection,
+  SolutionSection,
+} from '@/components/landing-page';
 
 export default function Home() {
   return (
