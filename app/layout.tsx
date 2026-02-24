@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { DM_Sans, Geist, Geist_Mono, Lora } from 'next/font/google';
+import { Toaster } from '@/components/ui/sonner';
 import './globals.css';
 
 const geistSans = Geist({
@@ -38,6 +39,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} ${lora.variable} ${dmSans.variable} antialiased`}
       >
         {children}
+        <Toaster />
       </body>
     </html>
   );

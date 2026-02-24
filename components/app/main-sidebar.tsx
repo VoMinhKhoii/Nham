@@ -4,14 +4,16 @@ import {
   Activity,
   ChevronDown,
   LayoutDashboard,
+  LogOut,
   PanelLeftClose,
   PanelLeftOpen,
   Settings,
   UtensilsCrossed,
 } from 'lucide-react';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import { useState } from 'react';
+import { createClient } from '@/lib/supabase/client';
 import { cn } from '@/lib/utils';
 
 interface NavItem {
@@ -72,7 +74,15 @@ function SectionHeader({
 
 export function MainSidebar() {
   const pathname = usePathname();
+  const router = useRouter();
   const [collapsed, setCollapsed] = useState(false);
+
+  const handleSignOut = async () => {
+    const supabase = createClient();
+    await supabase.auth.signOut();
+    router.push('/');
+    router.refresh();
+  };
 
   return (
     <aside
@@ -167,40 +177,53 @@ export function MainSidebar() {
       </div>
 
       {/* User Profile */}
-      <div className="flex items-center rounded-lg p-1.5 transition-colors hover:bg-[#F0EAE0]/40">
-        <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-[#C9A87C]/30 to-[#E8D5B5]/50 ring-1 ring-[#C9A87C]/20">
-          <span
-            className="font-bold text-[#695e4e] text-xs"
-            style={{
-              fontFamily: 'DM Sans, sans-serif',
-            }}
+      <div className="flex items-center justify-between rounded-lg p-1.5 transition-colors hover:bg-[#F0EAE0]/40">
+        <div className="flex items-center">
+          <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-[#C9A87C]/30 to-[#E8D5B5]/50 ring-1 ring-[#C9A87C]/20">
+            <span
+              className="font-bold text-[#695e4e] text-xs"
+              style={{
+                fontFamily: 'DM Sans, sans-serif',
+              }}
+            >
+              V
+            </span>
+          </div>
+          <div
+            className={cn(
+              'flex flex-col gap-0.5 overflow-hidden transition-all duration-300',
+              collapsed ? 'ml-0 max-w-0 opacity-0' : 'ml-3 max-w-44 opacity-100'
+            )}
           >
-            V
-          </span>
+            <span
+              className="whitespace-nowrap font-medium text-[10px] text-muted-foreground uppercase tracking-[0.04em]"
+              style={{
+                fontFamily: 'DM Sans, sans-serif',
+              }}
+            >
+              VMKHOIII
+            </span>
+            <span
+              className="whitespace-nowrap font-medium text-foreground text-xs"
+              style={{
+                fontFamily: 'DM Sans, sans-serif',
+              }}
+            >
+              minhkhoitdn@gmail.com
+            </span>
+          </div>
         </div>
-        <div
+        <button
+          type="button"
+          onClick={handleSignOut}
+          title="Sign out"
           className={cn(
-            'flex flex-col gap-0.5 overflow-hidden transition-all duration-300',
-            collapsed ? 'ml-0 max-w-0 opacity-0' : 'ml-3 max-w-44 opacity-100'
+            'flex h-7 w-7 shrink-0 items-center justify-center rounded-md text-muted-foreground transition-colors hover:bg-[#F0EAE0]/60 hover:text-red-500',
+            collapsed ? 'hidden' : ''
           )}
         >
-          <span
-            className="whitespace-nowrap font-medium text-[10px] text-muted-foreground uppercase tracking-[0.04em]"
-            style={{
-              fontFamily: 'DM Sans, sans-serif',
-            }}
-          >
-            VMKHOIII
-          </span>
-          <span
-            className="whitespace-nowrap font-medium text-foreground text-xs"
-            style={{
-              fontFamily: 'DM Sans, sans-serif',
-            }}
-          >
-            minhkhoitdn@gmail.com
-          </span>
-        </div>
+          <LogOut className="h-3.5 w-3.5" />
+        </button>
       </div>
     </aside>
   );

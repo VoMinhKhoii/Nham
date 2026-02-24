@@ -1,0 +1,247 @@
+{
+  "id": "dc7e112f-e26e-469a-9a49-597ab76296a5",
+  "prevId": "00000000-0000-0000-0000-000000000000",
+  "version": "7",
+  "dialect": "postgresql",
+  "tables": {
+    "public.user_profiles": {
+      "name": "user_profiles",
+      "schema": "",
+      "columns": {
+        "user_id": {
+          "name": "user_id",
+          "type": "uuid",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "weight_kg": {
+          "name": "weight_kg",
+          "type": "numeric(5, 2)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "height_cm": {
+          "name": "height_cm",
+          "type": "smallint",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "age": {
+          "name": "age",
+          "type": "smallint",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "biological_sex": {
+          "name": "biological_sex",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "activity_level": {
+          "name": "activity_level",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "tdee_kcal": {
+          "name": "tdee_kcal",
+          "type": "smallint",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "goal": {
+          "name": "goal",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "aggression": {
+          "name": "aggression",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "calorie_target": {
+          "name": "calorie_target",
+          "type": "smallint",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "protein_target_g": {
+          "name": "protein_target_g",
+          "type": "smallint",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "carbs_target_g": {
+          "name": "carbs_target_g",
+          "type": "smallint",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "fat_target_g": {
+          "name": "fat_target_g",
+          "type": "smallint",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "regional_profile": {
+          "name": "regional_profile",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "oil_usage": {
+          "name": "oil_usage",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "fat_trim_pork": {
+          "name": "fat_trim_pork",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "fat_trim_chicken": {
+          "name": "fat_trim_chicken",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "fat_trim_fish": {
+          "name": "fat_trim_fish",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "bone_awareness": {
+          "name": "bone_awareness",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": false,
+          "default": false
+        },
+        "default_rice_portion": {
+          "name": "default_rice_portion",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "sugar_braised": {
+          "name": "sugar_braised",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "bowl_size_ml": {
+          "name": "bowl_size_ml",
+          "type": "smallint",
+          "primaryKey": false,
+          "notNull": false,
+          "default": 200
+        },
+        "plate_size_ml": {
+          "name": "plate_size_ml",
+          "type": "smallint",
+          "primaryKey": false,
+          "notNull": false,
+          "default": 400
+        },
+        "created_at": {
+          "name": "created_at",
+          "type": "timestamp with time zone",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        },
+        "updated_at": {
+          "name": "updated_at",
+          "type": "timestamp with time zone",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "user_profiles_user_id_users_id_fk": {
+          "name": "user_profiles_user_id_users_id_fk",
+          "tableFrom": "user_profiles",
+          "tableTo": "users",
+          "schemaTo": "auth",
+          "columnsFrom": [
+            "user_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {
+        "user_profiles_biological_sex_check": {
+          "name": "user_profiles_biological_sex_check",
+          "value": "\"user_profiles\".\"biological_sex\" IN ('male', 'female')"
+        },
+        "user_profiles_activity_level_check": {
+          "name": "user_profiles_activity_level_check",
+          "value": "\"user_profiles\".\"activity_level\" IN ('sedentary', 'light', 'moderate', 'very_active')"
+        },
+        "user_profiles_goal_check": {
+          "name": "user_profiles_goal_check",
+          "value": "\"user_profiles\".\"goal\" IN ('cutting', 'bulking', 'maintaining')"
+        },
+        "user_profiles_aggression_check": {
+          "name": "user_profiles_aggression_check",
+          "value": "\"user_profiles\".\"aggression\" IN ('gentle', 'moderate', 'aggressive')"
+        },
+        "user_profiles_regional_profile_check": {
+          "name": "user_profiles_regional_profile_check",
+          "value": "\"user_profiles\".\"regional_profile\" IN ('mien_bac', 'mien_trung', 'mien_nam', 'mien_tay')"
+        },
+        "user_profiles_oil_usage_check": {
+          "name": "user_profiles_oil_usage_check",
+          "value": "\"user_profiles\".\"oil_usage\" IN ('minimal', 'normal', 'heavy')"
+        },
+        "user_profiles_fat_trim_pork_check": {
+          "name": "user_profiles_fat_trim_pork_check",
+          "value": "\"user_profiles\".\"fat_trim_pork\" IN ('trim', 'eat_all', 'by_dish')"
+        },
+        "user_profiles_fat_trim_chicken_check": {
+          "name": "user_profiles_fat_trim_chicken_check",
+          "value": "\"user_profiles\".\"fat_trim_chicken\" IN ('trim', 'eat_all', 'by_dish')"
+        },
+        "user_profiles_fat_trim_fish_check": {
+          "name": "user_profiles_fat_trim_fish_check",
+          "value": "\"user_profiles\".\"fat_trim_fish\" IN ('trim', 'eat_all', 'by_dish')"
+        },
+        "user_profiles_default_rice_portion_check": {
+          "name": "user_profiles_default_rice_portion_check",
+          "value": "\"user_profiles\".\"default_rice_portion\" IN ('small', 'medium', 'large')"
+        },
+        "user_profiles_sugar_braised_check": {
+          "name": "user_profiles_sugar_braised_check",
+          "value": "\"user_profiles\".\"sugar_braised\" IN ('low', 'medium', 'high')"
+        }
+      },
+      "isRLSEnabled": false
+    }
+  },
+  "enums": {},
+  "schemas": {},
+  "sequences": {},
+  "roles": {},
+  "policies": {},
+  "views": {},
+  "_meta": {
+    "columns": {},
+    "schemas": {},
+    "tables": {}
+  }
+}

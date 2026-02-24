@@ -1,5 +1,7 @@
 'use client';
 
+import { AuthDialog } from '@/components/auth/auth-dialog';
+import { AuthProvider } from '@/components/auth/auth-provider';
 import {
   CTASection,
   Footer,
@@ -11,7 +13,7 @@ import {
 
 export default function Home() {
   return (
-    <>
+    <AuthProvider>
       <Header />
       <main>
         <Hero />
@@ -20,6 +22,7 @@ export default function Home() {
         <CTASection />
       </main>
       <Footer />
-    </>
+      <AuthDialog />
+    </AuthProvider>
   );
 }
