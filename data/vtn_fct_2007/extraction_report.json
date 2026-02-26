@@ -1,0 +1,10 @@
+{
+  "total_records": 526,
+  "skipped_pages": 42,
+  "parse_errors": [],
+  "output_files": {
+    "json": "data/vtn_fct_2007/extracted_ingredients.json",
+    "csv": "data/vtn_fct_2007/extracted_ingredients.csv",
+    "page_index": "data/vtn_fct_2007/page_index.json"
+  }
+}

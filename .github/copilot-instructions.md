@@ -97,3 +97,58 @@ The following rules are intentionally disabled in Biome:
 
 ### Package Manager
 Project uses Bun for package management and running scripts.
+
+## Data: VTN FCT 2007 (Vietnamese Food Composition Table)
+
+- **Location**: `data/vtn_fct_2007/extracted_ingredients.json` (525 records)
+- **Extraction**: `scripts/vtn_fct/extract_vtn_fct_2007.py`
+- **Full docs**: `docs/DATA.md`
+
+### Parsed JSON Schema
+
+Each record follows this shape:
+
+```jsonc
+{
+  "id": "fao_vn_2007_{food_code}_{state}",
+  "name_primary": "string",
+  "name_alt": ["string"],
+  "name_en": "string",
+  "source": "FAO_VN_2007",
+  "state": "raw | cooked",
+  "inedible_portion_pct": 0.0,
+  "per_100g": {
+    "calories_kcal": 344.0,
+    "protein_g": 8.6,
+    "carbohydrate_g": 74.5,
+    "fat_g": 1.5,
+    "fiber_g": 0.6,
+    "sodium_mg": 3.0,
+    "calcium_mg": 32.0,
+    "iron_mg": 1.2,
+    "magnesium_mg": 17.0,
+    "phosphorus_mg": 98.0,
+    "potassium_mg": 282.0,
+    "zinc_mg": 2.2,
+    "copper_mcg": 280.0,
+    "manganese_mg": 1.1,
+    "beta_carotene_mcg": 0.0,
+    "vitamin_a_mcg": 0.0,
+    "vitamin_d_mcg": 0.0,
+    "vitamin_e_mg": null,
+    "vitamin_k_mcg": null,
+    "vitamin_c_mg": 0.0,
+    "vitamin_b1_mg": 0.14,
+    "vitamin_b2_mg": 0.06,
+    "vitamin_pp_mg": 2.4,
+    "vitamin_b5_mg": null,
+    "vitamin_b6_mg": null,
+    "vitamin_b9_mcg": null,
+    "vitamin_b12_mcg": null,
+    "vitamin_h_mcg": null
+  },
+  "last_verified": "2026-02-26"
+}
+```
+
+**Key conventions**: Unit suffixes (`_g`, `_mg`, `_mcg`, `_kcal`) on all nutrient keys. `null` = no data in source PDF, `0.0` = explicitly zero.

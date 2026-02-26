@@ -1,0 +1,607 @@
+{
+  "sample_size": 20,
+  "seed": 2007,
+  "validation_rule": "zero errors tolerated before bulk import",
+  "rows": [
+    {
+      "source_page": 22,
+      "id": "fao_vn_2007_1009_cooked",
+      "name_primary": "BANH BAO NHAN THIT",
+      "name_en": "Ball shaped dumpling, Vietnamese steamed buns",
+      "state": "cooked",
+      "edible_portion_pct": 0.0,
+      "per_100g": {
+        "calories": 219.0,
+        "protein": 6.1,
+        "carbohydrate": 47.5,
+        "fat": 0.5,
+        "fiber": 0.5,
+        "sodium": null,
+        "calcium": 19.0,
+        "iron": 1.5,
+        "extra": {
+          "magnesium": null,
+          "phosphorus": null,
+          "potassium": null,
+          "zinc": null,
+          "copper": null,
+          "manganese": null,
+          "retinol": 0.0,
+          "beta_carotene": null,
+          "vitamin_c": null
+        }
+      },
+      "source_excerpt": "Tªn thùc phÈm (Vietnamese): B¸nh bao nh©n thÞt STT: 9 Tªn tiÕng Anh (English): Ball shaped dumpling, Vietnamese steamed buns M· sè: 1009 Thμnh phÇn dinh d−ìng trong 100g phÇn ¨n ®−îc (100 grams edible portion) Th¶i bá (%): 0.0 Thμnh phÇn dinh d−ìng ĐV Hμm lượng TLTK Thμnh phÇn dinh d−ìng ĐV Hμm lượng TLTK (Nutrients) (Unit) (Value) (Source) (Nutrients) (Unit) (Value) (Source) Nước (Water) g 44.0 1 Tổng số isoflavon (Total isoflavone) mg - Năng lượng (Energy) KCal 219 Daidzein mg - KJ 916 Genistein mg - Protein g 6.1 1 Glycetin mg - Lipid (Fat) g 0.5 1 Tổng số acid béo no g - Glucid (Carbohydrate) g 47.5 1 (Total saturated fatty acid) Celluloza (Fiber) g 0.5 1 Palmitic (C16:0) g - Tro (Ash) g 1.4 1 Margaric (C17:0) g - Đường tổng số (Sugar) g - Stearic (C18:0) g - Galactoza (Galactose) g - Arachidic (C20:0) g - Maltoza (Maltose) g - Behenic (22:0) g - Lactoza (Lactose) g - Lignoceric (C24:0) g - Fructoza (Fructose) g - TS acid béo không no 1 nối đôi g - Glucoza (Glucose) g - (Total monounsaturated fatty acid) Sacaroza (Sucrose) g - Myristoleic (C14:1) g - Calci (Calcium) mg 19 1 Palmitoleic (C16:1) g - Sắt (Iron) mg 1.50 1 Oleic (C18:1) g - MMaaggiiêê ((MMaaggnneessiiuumm)) mmgg -- "
+    },
+    {
+      "source_page": 27,
+      "id": "fao_vn_2007_1014_cooked",
+      "name_primary": "BANH QUAY",
+      "name_en": "Wheat fritters twisted fried",
+      "state": "cooked",
+      "edible_portion_pct": 0.0,
+      "per_100g": {
+        "calories": 292.0,
+        "protein": 8.0,
+        "carbohydrate": 40.7,
+        "fat": 10.8,
+        "fiber": 0.7,
+        "sodium": null,
+        "calcium": null,
+        "iron": null,
+        "extra": {
+          "magnesium": null,
+          "phosphorus": null,
+          "potassium": null,
+          "zinc": null,
+          "copper": null,
+          "manganese": null,
+          "retinol": 0.0,
+          "beta_carotene": null,
+          "vitamin_c": null
+        }
+      },
+      "source_excerpt": "Tªn thùc phÈm (Vietnamese): B¸nh quÈy STT: 14 Tªn tiÕng Anh (English): Wheat fritters twisted fried M· sè: 1014 Thμnh phÇn dinh d−ìng trong 100g phÇn ¨n ®−îc (100 grams edible portion) Th¶i bá (%): 0.0 Thμnh phÇn dinh d−ìng ĐV Hμm lượng TLTK Thμnh phÇn dinh d−ìng ĐV Hμm lượng TLTK (Nutrients) (Unit) (Value) (Source) (Nutrients) (Unit) (Value) (Source) Nước (Water) g 38.7 1 Tổng số isoflavon (Total isoflavone) mg - Năng lượng (Energy) KCal 292 Daidzein mg - KJ 1222 Genistein mg - Protein g 8.0 1 Glycetin mg - Lipid (Fat) g 10.8 1 Tổng số acid béo no g - Glucid (Carbohydrate) g 40.7 1 (Total saturated fatty acid) Celluloza (Fiber) g 0.7 1 Palmitic (C16:0) g - Tro (Ash) g 1.1 1 Margaric (C17:0) g - Đường tổng số (Sugar) g - Stearic (C18:0) g - Galactoza (Galactose) g - Arachidic (C20:0) g - Maltoza (Maltose) g - Behenic (22:0) g - Lactoza (Lactose) g - Lignoceric (C24:0) g - Fructoza (Fructose) g - TS acid béo không no 1 nối đôi g - Glucoza (Glucose) g - (Total monounsaturated fatty acid) Sacaroza (Sucrose) g - Myristoleic (C14:1) g - Calci (Calcium) mg - Palmitoleic (C16:1) g - Sắt (Iron) mg - Oleic (C18:1) g - MMaaggiiêê ((MMaaggnneessiiuumm)) mmgg -- TTSS aacciidd bbééoo kkhhôônngg"
+    },
+    {
+      "source_page": 54,
+      "id": "fao_vn_2007_2016_raw",
+      "name_primary": "Bét dong läc",
+      "name_en": "Bermuda flour",
+      "state": "raw",
+      "edible_portion_pct": 0.0,
+      "per_100g": {
+        "calories": 341.0,
+        "protein": 0.6,
+        "carbohydrate": 84.7,
+        "fat": null,
+        "fiber": 0.5,
+        "sodium": null,
+        "calcium": 37.0,
+        "iron": 1.7,
+        "extra": {
+          "magnesium": null,
+          "phosphorus": null,
+          "potassium": null,
+          "zinc": null,
+          "copper": null,
+          "manganese": null,
+          "retinol": 0.0,
+          "beta_carotene": null,
+          "vitamin_c": null
+        }
+      },
+      "source_excerpt": "Tªn thùc phÈm (Vietnamese): Bét dong läc STT: 39 Tªn tiÕng Anh (English): Bermuda flour M· sè: 2016 Thμnh phÇn dinh d−ìng trong 100g phÇn ¨n ®−îc (100 grams edible portion) Th¶i bá (%): 0.0 Thμnh phÇn dinh d−ìng ĐV Hμm lượng TLTK Thμnh phÇn dinh d−ìng ĐV Hμm lượng TLTK (Nutrients) (Unit) (Value) (Source) (Nutrients) (Unit) (Value) (Source) Nước (Water) g 14.0 1 Tổng số isoflavon (Total isoflavone) mg - Năng lượng (Energy) KCal 341 Daidzein mg - KJ 1428 Genistein mg - Protein g 0.6 1 Glycetin mg - Lipid (Fat) g - Tổng số acid béo no g - Glucid (Carbohydrate) g 84.7 1 (Total saturated fatty acid) Celluloza (Fiber) g 0.5 1 Palmitic (C16:0) g - Tro (Ash) g 0.2 1 Margaric (C17:0) g - Đường tổng số (Sugar) g - Stearic (C18:0) g - Galactoza (Galactose) g - Arachidic (C20:0) g - Maltoza (Maltose) g - Behenic (22:0) g - Lactoza (Lactose) g - Lignoceric (C24:0) g - Fructoza (Fructose) g - TS acid béo không no 1 nối đôi g - Glucoza (Glucose) g - (Total monounsaturated fatty acid) Sacaroza (Sucrose) g - Myristoleic (C14:1) g - Calci (Calcium) mg 37 1 Palmitoleic (C16:1) g - Sắt (Iron) mg 1.70 1 Oleic (C18:1) g - MMaaggiiêê ((MMaaggnneessiiuumm)) mmgg -- TTSS aacciidd bbééoo kkhhôônngg nnoo nnh"
+    },
+    {
+      "source_page": 93,
+      "id": "fao_vn_2007_3027_cooked",
+      "name_primary": "§Ëu phô n−íng",
+      "name_en": "Curd tofu, fried",
+      "state": "cooked",
+      "edible_portion_pct": 0.0,
+      "per_100g": {
+        "calories": 114.0,
+        "protein": 13.4,
+        "carbohydrate": 0.8,
+        "fat": 6.4,
+        "fiber": 0.5,
+        "sodium": null,
+        "calcium": 370.0,
+        "iron": 4.7,
+        "extra": {
+          "magnesium": null,
+          "phosphorus": null,
+          "potassium": null,
+          "zinc": null,
+          "copper": null,
+          "manganese": null,
+          "retinol": 0.0,
+          "beta_carotene": null,
+          "vitamin_c": null
+        }
+      },
+      "source_excerpt": "Tªn thùc phÈm (Vietnamese): §Ëu phô n−íng STT: 76 Tªn tiÕng Anh (English): Curd tofu, fried M· sè: 3027 Thμnh phÇn dinh d−ìng trong 100g phÇn ¨n ®−îc (100 grams edible portion) Th¶i bá (%): 0.0 Thμnh phÇn dinh d−ìng ĐV Hμm lượng TLTK Thμnh phÇn dinh d−ìng ĐV Hμm lượng TLTK (Nutrients) (Unit) (Value) (Source) (Nutrients) (Unit) (Value) (Source) Nước (Water) g 78.2 1 Tổng số isoflavon (Total isoflavone) mg - Năng lượng (Energy) KCal 114 Daidzein mg - KJ 479 Genistein mg - Protein g 13.4 1 Glycetin mg - Lipid (Fat) g 6.4 1 Tổng số acid béo no g - Glucid (Carbohydrate) g 0.8 1 (Total saturated fatty acid) Celluloza (Fiber) g 0.5 1 Palmitic (C16:0) g - Tro (Ash) g 0.7 1 Margaric (C17:0) g - Đường tổng số (Sugar) g - Stearic (C18:0) g - Galactoza (Galactose) g - Arachidic (C20:0) g - Maltoza (Maltose) g - Behenic (22:0) g - Lactoza (Lactose) g - Lignoceric (C24:0) g - Fructoza (Fructose) g - TS acid béo không no 1 nối đôi g - Glucoza (Glucose) g - (Total monounsaturated fatty acid) Sacaroza (Sucrose) g - Myristoleic (C14:1) g - Calci (Calcium) mg 370 1 Palmitoleic (C16:1) g - Sắt (Iron) mg 4.70 1 Oleic (C18:1) g - MMaaggiiêê ((MMaaggnneessiiuumm)) mmgg -- TTSS aacciidd bbééoo kkhhôônngg "
+    },
+    {
+      "source_page": 94,
+      "id": "fao_vn_2007_3028_cooked",
+      "name_primary": "H¹t bÝ ®á rang",
+      "name_en": "Pumpkin seeds, fried",
+      "state": "cooked",
+      "edible_portion_pct": 19.0,
+      "per_100g": {
+        "calories": 519.0,
+        "protein": 35.1,
+        "carbohydrate": 23.0,
+        "fat": 31.8,
+        "fiber": 2.3,
+        "sodium": null,
+        "calcium": 235.0,
+        "iron": 2.2,
+        "extra": {
+          "magnesium": null,
+          "phosphorus": null,
+          "potassium": null,
+          "zinc": null,
+          "copper": null,
+          "manganese": null,
+          "retinol": 0.0,
+          "beta_carotene": null,
+          "vitamin_c": null
+        }
+      },
+      "source_excerpt": "Tªn thùc phÈm (Vietnamese): H¹t bÝ ®á rang STT: 77 Tªn tiÕng Anh (English): Pumpkin seeds, fried M· sè: 3028 Thμnh phÇn dinh d−ìng trong 100g phÇn ¨n ®−îc (100 grams edible portion) Th¶i bá (%): 19.0 Thμnh phÇn dinh d−ìng ĐV Hμm lượng TLTK Thμnh phÇn dinh d−ìng ĐV Hμm lượng TLTK (Nutrients) (Unit) (Value) (Source) (Nutrients) (Unit) (Value) (Source) Nước (Water) g 3.6 1 Tổng số isoflavon (Total isoflavone) mg - Năng lượng (Energy) KCal 519 Daidzein mg - KJ 2170 Genistein mg - Protein g 35.1 1 Glycetin mg - Lipid (Fat) g 31.8 1 Tổng số acid béo no g - Glucid (Carbohydrate) g 23.0 1 (Total saturated fatty acid) Celluloza (Fiber) g 2.3 1 Palmitic (C16:0) g - Tro (Ash) g 4.2 1 Margaric (C17:0) g - Đường tổng số (Sugar) g - Stearic (C18:0) g - Galactoza (Galactose) g - Arachidic (C20:0) g - Maltoza (Maltose) g - Behenic (22:0) g - Lactoza (Lactose) g - Lignoceric (C24:0) g - Fructoza (Fructose) g - TS acid béo không no 1 nối đôi g - Glucoza (Glucose) g - (Total monounsaturated fatty acid) Sacaroza (Sucrose) g - Myristoleic (C14:1) g - Calci (Calcium) mg 235 1 Palmitoleic (C16:1) g - Sắt (Iron) mg 2.20 1 Oleic (C18:1) g - MMaaggiiêê ((MMaaggnneessiiuumm)) mmgg -- TTSS aacciidd bbééoo kkh"
+    },
+    {
+      "source_page": 95,
+      "id": "fao_vn_2007_3029_cooked",
+      "name_primary": "H¹t d−a ®á rang (d−a hÊu)",
+      "name_en": "Water melon seeds whole, fried",
+      "state": "cooked",
+      "edible_portion_pct": 22.0,
+      "per_100g": {
+        "calories": 551.0,
+        "protein": 31.8,
+        "carbohydrate": 18.0,
+        "fat": 39.1,
+        "fiber": 1.8,
+        "sodium": null,
+        "calcium": 237.0,
+        "iron": 3.0,
+        "extra": {
+          "magnesium": null,
+          "phosphorus": null,
+          "potassium": null,
+          "zinc": null,
+          "copper": null,
+          "manganese": null,
+          "retinol": 0.0,
+          "beta_carotene": null,
+          "vitamin_c": null
+        }
+      },
+      "source_excerpt": "Tªn thùc phÈm (Vietnamese): H¹t d−a ®á rang (d−a hÊu) STT: 78 Tªn tiÕng Anh (English): Water melon seeds whole, fried M· sè: 3029 Thμnh phÇn dinh d−ìng trong 100g phÇn ¨n ®−îc (100 grams edible portion) Th¶i bá (%): 22.0 Thμnh phÇn dinh d−ìng ĐV Hμm lượng TLTK Thμnh phÇn dinh d−ìng ĐV Hμm lượng TLTK (Nutrients) (Unit) (Value) (Source) (Nutrients) (Unit) (Value) (Source) Nước (Water) g 4.8 1 Tổng số isoflavon (Total isoflavone) mg - Năng lượng (Energy) KCal 551 Daidzein mg - KJ 2306 Genistein mg - Protein g 31.8 1 Glycetin mg - Lipid (Fat) g 39.1 1 Tổng số acid béo no g 8.000 3 Glucid (Carbohydrate) g 18.0 1 (Total saturated fatty acid) Celluloza (Fiber) g 1.8 1 Palmitic (C16:0) g 3.800 3 Tro (Ash) g 4.5 1 Margaric (C17:0) g 0.000 3 Đường tổng số (Sugar) g - Stearic (C18:0) g 4.200 3 Galactoza (Galactose) g - Arachidic (C20:0) g 0.000 3 Maltoza (Maltose) g - Behenic (22:0) g 0.000 3 Lactoza (Lactose) g - Lignoceric (C24:0) g 0.000 3 Fructoza (Fructose) g - TS acid béo không no 1 nối đôi g 29.000 3 Glucoza (Glucose) g - (Total monounsaturated fatty acid) Sacaroza (Sucrose) g - Myristoleic (C14:1) g 0.000 3 Calci (Calcium) mg 237 1 Palmitoleic (C16:1) g 0.000 3 Sắt (Iron) mg 3.00 1 Ol"
+    },
+    {
+      "source_page": 96,
+      "id": "fao_vn_2007_3030_cooked",
+      "name_primary": "H¹t ®iÒu kh«, chiªn dÇu",
+      "name_en": "Cashew, common, roasted with oil",
+      "state": "cooked",
+      "edible_portion_pct": 0.0,
+      "per_100g": {
+        "calories": 583.0,
+        "protein": 18.3,
+        "carbohydrate": 16.4,
+        "fat": 49.3,
+        "fiber": 0.7,
+        "sodium": null,
+        "calcium": 32.0,
+        "iron": 3.9,
+        "extra": {
+          "magnesium": null,
+          "phosphorus": null,
+          "potassium": null,
+          "zinc": null,
+          "copper": null,
+          "manganese": null,
+          "retinol": 0.0,
+          "beta_carotene": null,
+          "vitamin_c": null
+        }
+      },
+      "source_excerpt": "Tªn thùc phÈm (Vietnamese): H¹t ®iÒu kh«, chiªn dÇu STT: 79 Tªn tiÕng Anh (English): Cashew, common, roasted with oil M· sè: 3030 Thμnh phÇn dinh d−ìng trong 100g phÇn ¨n ®−îc (100 grams edible portion) Th¶i bá (%): 0.0 Thμnh phÇn dinh d−ìng ĐV Hμm lượng TLTK Thμnh phÇn dinh d−ìng ĐV Hμm lượng TLTK (Nutrients) (Unit) (Value) (Source) (Nutrients) (Unit) (Value) (Source) Nước (Water) g 12.7 1 Tổng số isoflavon (Total isoflavone) mg - Năng lượng (Energy) KCal 583 Daidzein mg - KJ 2437 Genistein mg - Protein g 18.3 1 Glycetin mg - Lipid (Fat) g 49.3 1 Tổng số acid béo no g 5.500 3 Glucid (Carbohydrate) g 16.4 1 (Total saturated fatty acid) Celluloza (Fiber) g 0.7 1 Palmitic (C16:0) g 5.500 3 Tro (Ash) g 2.6 1 Margaric (C17:0) g 0.000 3 Đường tổng số (Sugar) g - Stearic (C18:0) g - Galactoza (Galactose) g - Arachidic (C20:0) g 0.000 3 Maltoza (Maltose) g - Behenic (22:0) g 0.000 3 Lactoza (Lactose) g - Lignoceric (C24:0) g 0.000 3 Fructoza (Fructose) g - TS acid béo không no 1 nối đôi g 41.100 3 Glucoza (Glucose) g - (Total monounsaturated fatty acid) Sacaroza (Sucrose) g - Myristoleic (C14:1) g 0.000 3 Calci (Calcium) mg 32 1 Palmitoleic (C16:1) g 0.000 3 Sắt (Iron) mg 3.90 1 Oleic (C1"
+    },
+    {
+      "source_page": 133,
+      "id": "fao_vn_2007_4031_raw",
+      "name_primary": "§Ëu Hμ Lan",
+      "name_en": "Green peas; field pea; Peas garden",
+      "state": "raw",
+      "edible_portion_pct": 10.0,
+      "per_100g": {
+        "calories": 72.0,
+        "protein": 6.5,
+        "carbohydrate": 10.6,
+        "fat": 0.4,
+        "fiber": 1.0,
+        "sodium": 5.0,
+        "calcium": 57.0,
+        "iron": 0.8,
+        "extra": {
+          "magnesium": null,
+          "phosphorus": null,
+          "potassium": 244.0,
+          "zinc": 1.24,
+          "copper": 176.0,
+          "manganese": 0.41,
+          "retinol": 0.0,
+          "beta_carotene": null,
+          "vitamin_c": null
+        }
+      },
+      "source_excerpt": "Tªn thùc phÈm (Vietnamese): §Ëu Hμ Lan STT: 113 Tªn tiÕng Anh (English): Green peas; field pea; Peas garden M· sè: 4031 Thμnh phÇn dinh d−ìng trong 100g phÇn ¨n ®−îc (100 grams edible portion) Th¶i bá (%): 10.0 Thμnh phÇn dinh d−ìng ĐV Hμm lượng TLTK Thμnh phÇn dinh d−ìng ĐV Hμm lượng TLTK (Nutrients) (Unit) (Value) (Source) (Nutrients) (Unit) (Value) (Source) Nước (Water) g 81.0 1 Tổng số isoflavon (Total isoflavone) mg - Năng lượng (Energy) KCal 72 Daidzein mg - KJ 301 Genistein mg - Protein g 6.5 1 Glycetin mg - Lipid (Fat) g 0.4 3 Tổng số acid béo no g 0.070 3 Glucid (Carbohydrate) g 10.6 1 (Total saturated fatty acid) Celluloza (Fiber) g 1.0 1 Palmitic (C16:0) g 0.060 3 Tro (Ash) g 0.5 1 Margaric (C17:0) g 0.000 3 Đường tổng số (Sugar) g 5.67 3 Stearic (C18:0) g 0.010 3 Galactoza (Galactose) g 0 3 Arachidic (C20:0) g 0.000 3 Maltoza (Maltose) g 0.17 3 Behenic (22:0) g 0.000 3 Lactoza (Lactose) g 0 3 Lignoceric (C24:0) g 0.000 3 Fructoza (Fructose) g 0.39 3 TS acid béo không no 1 nối đôi g 0.040 3 Glucoza (Glucose) g 0.12 3 (Total monounsaturated fatty acid) Sacaroza (Sucrose) g 4.99 3 Myristoleic (C14:1) g 0.000 3 Calci (Calcium) mg 57 1 Palmitoleic (C16:1) g 0.000 3 Sắt (Iron"
+    },
+    {
+      "source_page": 247,
+      "id": "fao_vn_2007_5017_raw",
+      "name_primary": "§u ®ñ chÝn",
+      "name_en": "Papaya, ripe",
+      "state": "raw",
+      "edible_portion_pct": 12.4,
+      "per_100g": {
+        "calories": 36.0,
+        "protein": 1.0,
+        "carbohydrate": 7.6,
+        "fat": 0.1,
+        "fiber": 0.6,
+        "sodium": 4.0,
+        "calcium": 40.0,
+        "iron": 2.6,
+        "extra": {
+          "magnesium": null,
+          "phosphorus": null,
+          "potassium": 221.0,
+          "zinc": 0.1,
+          "copper": 40.0,
+          "manganese": 0.84,
+          "retinol": 0.0,
+          "beta_carotene": null,
+          "vitamin_c": null
+        }
+      },
+      "source_excerpt": "Tªn thùc phÈm (Vietnamese): §u ®ñ chÝn STT: 225 Tªn tiÕng Anh (English): Papaya, ripe M· sè: 5017 Thμnh phÇn dinh d−ìng trong 100g phÇn ¨n ®−îc (100 grams edible portion) Th¶i bá (%): 12.4 Thμnh phÇn dinh d−ìng ĐV Hμm lượng TLTK Thμnh phÇn dinh d−ìng ĐV Hμm lượng TLTK (Nutrients) (Unit) (Value) (Source) (Nutrients) (Unit) (Value) (Source) Nước (Water) g 90.1 1 Tổng số isoflavon (Total isoflavone) mg - Năng lượng (Energy) KCal 36 Daidzein mg - KJ 149 Genistein mg - Protein g 1.0 1 Glycetin mg - Lipid (Fat) g 0.1 3 Tổng số acid béo no g 0.040 3 Glucid (Carbohydrate) g 7.6 1 (Total saturated fatty acid) Celluloza (Fiber) g 0.6 1 Palmitic (C16:0) g 0.030 3 Tro (Ash) g 0.6 1 Margaric (C17:0) g 0.000 3 Đường tổng số (Sugar) g 5.9 3 Stearic (C18:0) g 0.000 3 Galactoza (Galactose) g - Arachidic (C20:0) g 0.000 3 Maltoza (Maltose) g - Behenic (22:0) g 0.000 3 Lactoza (Lactose) g - Lignoceric (C24:0) g 0.000 3 Fructoza (Fructose) g - TS acid béo không no 1 nối đôi g 0.040 3 Glucoza (Glucose) g - (Total monounsaturated fatty acid) Sacaroza (Sucrose) g - Myristoleic (C14:1) g 0.000 3 Calci (Calcium) mg 40 1 Palmitoleic (C16:1) g 0.020 3 Sắt (Iron) mg 2.60 1 Oleic (C18:1) g 0.020 3 MMaaggiiêê ("
+    },
+    {
+      "source_page": 368,
+      "id": "fao_vn_2007_7064_cooked",
+      "name_primary": "Ch¶ lîn",
+      "name_en": "Pork, mince fat meat grilled",
+      "state": "cooked",
+      "edible_portion_pct": 0.0,
+      "per_100g": {
+        "calories": 517.0,
+        "protein": 10.8,
+        "carbohydrate": 5.1,
+        "fat": 50.4,
+        "fiber": 0.0,
+        "sodium": null,
+        "calcium": 20.0,
+        "iron": null,
+        "extra": {
+          "magnesium": null,
+          "phosphorus": null,
+          "potassium": null,
+          "zinc": null,
+          "copper": null,
+          "manganese": null,
+          "retinol": null,
+          "beta_carotene": null,
+          "vitamin_c": null
+        }
+      },
+      "source_excerpt": "Tªn thùc phÈm (Vietnamese): Ch¶ lîn STT: 342 Tªn tiÕng Anh (English): Pork, mince fat meat grilled M· sè: 7064 Thμnh phÇn dinh d−ìng trong 100g phÇn ¨n ®−îc (100 grams edible portion) Th¶i bá (%): 0.0 Thμnh phÇn dinh d−ìng ĐV Hμm lượng TLTK Thμnh phÇn dinh d−ìng ĐV Hμm lượng TLTK (Nutrients) (Unit) (Value) (Source) (Nutrients) (Unit) (Value) (Source) Nước (Water) g 32.6 1 Tổng số isoflavon (Total isoflavone) mg 0 3 Năng lượng (Energy) KCal 517 Daidzein mg 0 3 KJ 2164 Genistein mg 0 3 Protein g 10.8 1 Glycetin mg 0 3 Lipid (Fat) g 50.4 1 Tổng số acid béo no g - Glucid (Carbohydrate) g 5.1 1 (Total saturated fatty acid) Celluloza (Fiber) g 0.0 1 Palmitic (C16:0) g - Tro (Ash) g 1.1 1 Margaric (C17:0) g - Đường tổng số (Sugar) g - Stearic (C18:0) g - Galactoza (Galactose) g - Arachidic (C20:0) g - Maltoza (Maltose) g - Behenic (22:0) g - Lactoza (Lactose) g - Lignoceric (C24:0) g - Fructoza (Fructose) g - TS acid béo không no 1 nối đôi g - Glucoza (Glucose) g - (Total monounsaturated fatty acid) Sacaroza (Sucrose) g - Myristoleic (C14:1) g - Calci (Calcium) mg 20 1 Palmitoleic (C16:1) g - Sắt (Iron) mg - Oleic (C18:1) g - MMaaggiiêê ((MMaaggnneessiiuumm)) mmgg -- TTSS aacciidd bbééoo "
+    },
+    {
+      "source_page": 373,
+      "id": "fao_vn_2007_7069_cooked",
+      "name_primary": "Giß lôa",
+      "name_en": "Pork, mince lean meat steamed",
+      "state": "cooked",
+      "edible_portion_pct": 0.0,
+      "per_100g": {
+        "calories": 136.0,
+        "protein": 21.5,
+        "carbohydrate": 0.0,
+        "fat": 5.5,
+        "fiber": 0.0,
+        "sodium": null,
+        "calcium": null,
+        "iron": null,
+        "extra": {
+          "magnesium": null,
+          "phosphorus": null,
+          "potassium": null,
+          "zinc": null,
+          "copper": null,
+          "manganese": null,
+          "retinol": null,
+          "beta_carotene": null,
+          "vitamin_c": null
+        }
+      },
+      "source_excerpt": "Tªn thùc phÈm (Vietnamese): Giß lôa STT: 347 Tªn tiÕng Anh (English): Pork, mince lean meat steamed M· sè: 7069 Thμnh phÇn dinh d−ìng trong 100g phÇn ¨n ®−îc (100 grams edible portion) Th¶i bá (%): 0.0 Thμnh phÇn dinh d−ìng ĐV Hμm lượng TLTK Thμnh phÇn dinh d−ìng ĐV Hμm lượng TLTK (Nutrients) (Unit) (Value) (Source) (Nutrients) (Unit) (Value) (Source) Nước (Water) g 72.0 1 Tổng số isoflavon (Total isoflavone) mg 0 3 Năng lượng (Energy) KCal 136 Daidzein mg 0 3 KJ 567 Genistein mg 0 3 Protein g 21.5 1 Glycetin mg 0 3 Lipid (Fat) g 5.5 1 Tổng số acid béo no g - Glucid (Carbohydrate) g 0.0 3 (Total saturated fatty acid) Celluloza (Fiber) g 0.0 1 Palmitic (C16:0) g - Tro (Ash) g 1.0 1 Margaric (C17:0) g - Đường tổng số (Sugar) g 0 3 Stearic (C18:0) g - Galactoza (Galactose) g 0 3 Arachidic (C20:0) g - Maltoza (Maltose) g 0 3 Behenic (22:0) g - Lactoza (Lactose) g 0 3 Lignoceric (C24:0) g - Fructoza (Fructose) g 0 3 TS acid béo không no 1 nối đôi g - Glucoza (Glucose) g 0 3 (Total monounsaturated fatty acid) Sacaroza (Sucrose) g 0 3 Myristoleic (C14:1) g - Calci (Calcium) mg - Palmitoleic (C16:1) g - Sắt (Iron) mg - Oleic (C18:1) g - MMaaggiiêê ((MMaaggnneessiiuumm)) mmgg -- TTSS aaccii"
+    },
+    {
+      "source_page": 380,
+      "id": "fao_vn_2007_7076_raw",
+      "name_primary": "ThÞt tr©u kh«",
+      "name_en": "Buffalo meat, dried",
+      "state": "raw",
+      "edible_portion_pct": 0.0,
+      "per_100g": {
+        "calories": 226.0,
+        "protein": 50.4,
+        "carbohydrate": 0.0,
+        "fat": 2.7,
+        "fiber": 0.0,
+        "sodium": null,
+        "calcium": null,
+        "iron": null,
+        "extra": {
+          "magnesium": null,
+          "phosphorus": null,
+          "potassium": null,
+          "zinc": null,
+          "copper": null,
+          "manganese": null,
+          "retinol": null,
+          "beta_carotene": null,
+          "vitamin_c": null
+        }
+      },
+      "source_excerpt": "Tªn thùc phÈm (Vietnamese): ThÞt tr©u kh« STT: 354 Tªn tiÕng Anh (English): Buffalo meat, dried M· sè: 7076 Thμnh phÇn dinh d−ìng trong 100g phÇn ¨n ®−îc (100 grams edible portion) Th¶i bá (%): 0.0 Thμnh phÇn dinh d−ìng ĐV Hμm lượng TLTK Thμnh phÇn dinh d−ìng ĐV Hμm lượng TLTK (Nutrients) (Unit) (Value) (Source) (Nutrients) (Unit) (Value) (Source) Nước (Water) g 36.4 1 Tổng số isoflavon (Total isoflavone) mg 0 3 Năng lượng (Energy) KCal 226 Daidzein mg 0 3 KJ 945 Genistein mg 0 3 Protein g 50.4 1 Glycetin mg 0 3 Lipid (Fat) g 2.7 1 Tổng số acid béo no g - Glucid (Carbohydrate) g 0.0 3 (Total saturated fatty acid) Celluloza (Fiber) g 0.0 1 Palmitic (C16:0) g - Tro (Ash) g 10.5 1 Margaric (C17:0) g - Đường tổng số (Sugar) g 0 3 Stearic (C18:0) g - Galactoza (Galactose) g 0 3 Arachidic (C20:0) g - Maltoza (Maltose) g 0 3 Behenic (22:0) g - Lactoza (Lactose) g 0 3 Lignoceric (C24:0) g - Fructoza (Fructose) g 0 3 TS acid béo không no 1 nối đôi g - Glucoza (Glucose) g 0 3 (Total monounsaturated fatty acid) Sacaroza (Sucrose) g 0 3 Myristoleic (C14:1) g - Calci (Calcium) mg - Palmitoleic (C16:1) g - Sắt (Iron) mg - Oleic (C18:1) g - MMaaggiiêê ((MMaaggnneessiiuumm)) mmgg -- TTSS aacciidd "
+    },
+    {
+      "source_page": 428,
+      "id": "fao_vn_2007_8040_raw",
+      "name_primary": "Mùc t−¬i",
+      "name_en": "Cuttle fish, raw (Squid)",
+      "state": "raw",
+      "edible_portion_pct": 22.0,
+      "per_100g": {
+        "calories": 73.0,
+        "protein": 16.3,
+        "carbohydrate": 0.0,
+        "fat": 0.9,
+        "fiber": 0.0,
+        "sodium": 44.0,
+        "calcium": 14.0,
+        "iron": 0.6,
+        "extra": {
+          "magnesium": null,
+          "phosphorus": null,
+          "potassium": 273.0,
+          "zinc": 0.7,
+          "copper": 1891.0,
+          "manganese": 0.04,
+          "retinol": 10.0,
+          "beta_carotene": null,
+          "vitamin_c": null
+        }
+      },
+      "source_excerpt": "Tªn thùc phÈm (Vietnamese): Mùc t−¬i STT: 400 Tªn tiÕng Anh (English): Cuttle fish, raw (Squid) M· sè: 8040 Thμnh phÇn dinh d−ìng trong 100g phÇn ¨n ®−îc (100 grams edible portion) Th¶i bá (%): 22.0 Thμnh phÇn dinh d−ìng ĐV Hμm lượng TLTK Thμnh phÇn dinh d−ìng ĐV Hμm lượng TLTK (Nutrients) (Unit) (Value) (Source) (Nutrients) (Unit) (Value) (Source) Nước (Water) g 81.4 1 Tổng số isoflavon (Total isoflavone) mg 0 3 Năng lượng (Energy) KCal 73 Daidzein mg 0 3 KJ 307 Genistein mg 0 3 Protein g 16.3 1 Glycetin mg 0 3 Lipid (Fat) g 0.9 1 Tổng số acid béo no g 0.360 3 Glucid (Carbohydrate) g 0.0 3 (Total saturated fatty acid) Celluloza (Fiber) g 0.0 1 Palmitic (C16:0) g 0.260 3 Tro (Ash) g 1.4 1 Margaric (C17:0) g 0.000 3 Đường tổng số (Sugar) g - Stearic (C18:0) g 0.060 3 Galactoza (Galactose) g - Arachidic (C20:0) g 0.000 3 Maltoza (Maltose) g - Behenic (22:0) g 0.000 3 Lactoza (Lactose) g - Lignoceric (C24:0) g 0.000 3 Fructoza (Fructose) g - TS acid béo không no 1 nối đôi g 0.110 3 Glucoza (Glucose) g - (Total monounsaturated fatty acid) Sacaroza (Sucrose) g - Myristoleic (C14:1) g 0.000 3 Calci (Calcium) mg 14 1 Palmitoleic (C16:1) g 0.010 3 Sắt (Iron) mg 0.60 1 Oleic (C18:1) g 0.050"
+    },
+    {
+      "source_page": 442,
+      "id": "fao_vn_2007_8054_raw",
+      "name_primary": "Trai",
+      "name_en": "Manodonta",
+      "state": "raw",
+      "edible_portion_pct": 60.0,
+      "per_100g": {
+        "calories": 38.0,
+        "protein": 4.6,
+        "carbohydrate": 2.5,
+        "fat": 1.1,
+        "fiber": 0.0,
+        "sodium": 56.0,
+        "calcium": 668.0,
+        "iron": 1.5,
+        "extra": {
+          "magnesium": null,
+          "phosphorus": null,
+          "potassium": 314.0,
+          "zinc": 1.37,
+          "copper": 344.0,
+          "manganese": 0.5,
+          "retinol": 90.0,
+          "beta_carotene": null,
+          "vitamin_c": null
+        }
+      },
+      "source_excerpt": "Tªn thùc phÈm (Vietnamese): Trai STT: 414 Tªn tiÕng Anh (English): Manodonta M· sè: 8054 Thμnh phÇn dinh d−ìng trong 100g phÇn ¨n ®−îc (100 grams edible portion) Th¶i bá (%): 60.0 Thμnh phÇn dinh d−ìng ĐV Hμm lượng TLTK Thμnh phÇn dinh d−ìng ĐV Hμm lượng TLTK (Nutrients) (Unit) (Value) (Source) (Nutrients) (Unit) (Value) (Source) Nước (Water) g 89.9 1 Tổng số isoflavon (Total isoflavone) mg 0 3 Năng lượng (Energy) KCal 38 Daidzein mg 0 3 KJ 160 Genistein mg 0 3 Protein g 4.6 1 Glycetin mg 0 3 Lipid (Fat) g 1.1 1 Tổng số acid béo no g 0.090 3 Glucid (Carbohydrate) g 2.5 1 (Total saturated fatty acid) Celluloza (Fiber) g 0.0 1 Palmitic (C16:0) g 0.060 3 Tro (Ash) g 1.9 1 Margaric (C17:0) g 0.000 3 Đường tổng số (Sugar) g - Stearic (C18:0) g 0.020 3 Galactoza (Galactose) g - Arachidic (C20:0) g 0.000 3 Maltoza (Maltose) g - Behenic (22:0) g 0.000 3 Lactoza (Lactose) g - Lignoceric (C24:0) g 0.000 3 Fructoza (Fructose) g - TS acid béo không no 1 nối đôi g 0.080 3 Glucoza (Glucose) g - (Total monounsaturated fatty acid) Sacaroza (Sucrose) g - Myristoleic (C14:1) g 0.000 3 Calci (Calcium) mg 668 1 Palmitoleic (C16:1) g 0.020 3 Sắt (Iron) mg 1.50 1 Oleic (C18:1) g 0.030 3 MMaaggiiêê ((MMa"
+    },
+    {
+      "source_page": 443,
+      "id": "fao_vn_2007_8055_cooked",
+      "name_primary": "B¸nh phång t«m r¸n",
+      "name_en": "Deep fried shrimp paste",
+      "state": "cooked",
+      "edible_portion_pct": 0.0,
+      "per_100g": {
+        "calories": 676.0,
+        "protein": 1.6,
+        "carbohydrate": 34.1,
+        "fat": 59.2,
+        "fiber": 0.0,
+        "sodium": null,
+        "calcium": 175.0,
+        "iron": null,
+        "extra": {
+          "magnesium": null,
+          "phosphorus": null,
+          "potassium": null,
+          "zinc": null,
+          "copper": null,
+          "manganese": null,
+          "retinol": null,
+          "beta_carotene": null,
+          "vitamin_c": null
+        }
+      },
+      "source_excerpt": "Tªn thùc phÈm (Vietnamese): B¸nh phång t«m r¸n STT: 415 Tªn tiÕng Anh (English): Deep fried shrimp paste M· sè: 8055 Thμnh phÇn dinh d−ìng trong 100g phÇn ¨n ®−îc (100 grams edible portion) Th¶i bá (%): 0.0 Thμnh phÇn dinh d−ìng ĐV Hμm lượng TLTK Thμnh phÇn dinh d−ìng ĐV Hμm lượng TLTK (Nutrients) (Unit) (Value) (Source) (Nutrients) (Unit) (Value) (Source) Nước (Water) g 3.8 1 Tổng số isoflavon (Total isoflavone) mg 0 3 Năng lượng (Energy) KCal 676 Daidzein mg 0 3 KJ 2827 Genistein mg 0 3 Protein g 1.6 1 Glycetin mg 0 3 Lipid (Fat) g 59.2 1 Tổng số acid béo no g - Glucid (Carbohydrate) g 34.1 1 (Total saturated fatty acid) Celluloza (Fiber) g 0.0 1 Palmitic (C16:0) g - Tro (Ash) g 1.3 1 Margaric (C17:0) g - Đường tổng số (Sugar) g - Stearic (C18:0) g - Galactoza (Galactose) g - Arachidic (C20:0) g - Maltoza (Maltose) g - Behenic (22:0) g - Lactoza (Lactose) g - Lignoceric (C24:0) g - Fructoza (Fructose) g - TS acid béo không no 1 nối đôi g - Glucoza (Glucose) g - (Total monounsaturated fatty acid) Sacaroza (Sucrose) g - Myristoleic (C14:1) g - Calci (Calcium) mg 175 1 Palmitoleic (C16:1) g - Sắt (Iron) mg - Oleic (C18:1) g - MMaaggiiêê ((MMaaggnneessiiuumm)) mmgg -- TTSS aacciidd b"
+    },
+    {
+      "source_page": 477,
+      "id": "fao_vn_2007_11004_cooked",
+      "name_primary": "L¹c chao dÇu",
+      "name_en": "Peanut, oil fried",
+      "state": "cooked",
+      "edible_portion_pct": 0.0,
+      "per_100g": {
+        "calories": 680.0,
+        "protein": 25.7,
+        "carbohydrate": 10.3,
+        "fat": 59.5,
+        "fiber": null,
+        "sodium": null,
+        "calcium": null,
+        "iron": null,
+        "extra": {
+          "magnesium": null,
+          "phosphorus": null,
+          "potassium": null,
+          "zinc": null,
+          "copper": null,
+          "manganese": null,
+          "retinol": null,
+          "beta_carotene": null,
+          "vitamin_c": null
+        }
+      },
+      "source_excerpt": "Tªn thùc phÈm (Vietnamese): L¹c chao dÇu STT: 443 Tªn tiÕng Anh (English): Peanut, oil fried M· sè: 11004 Thμnh phÇn dinh d−ìng trong 100g phÇn ¨n ®−îc (100 grams edible portion) Th¶i bá (%): 0.0 Thμnh phÇn dinh d−ìng ĐV Hμm lượng TLTK Thμnh phÇn dinh d−ìng ĐV Hμm lượng TLTK (Nutrients) (Unit) (Value) (Source) (Nutrients) (Unit) (Value) (Source) Nước (Water) g 1.8 1 Tổng số isoflavon (Total isoflavone) mg 0 3 Năng lượng (Energy) KCal 680 Daidzein mg 0 3 KJ 2843 Genistein mg 0 3 Protein g 25.7 1 Glycetin mg 0 3 Lipid (Fat) g 59.5 1 Tổng số acid béo no g - Glucid (Carbohydrate) g 10.3 1 (Total saturated fatty acid) Celluloza (Fiber) g - Palmitic (C16:0) g - Tro (Ash) g 2.7 1 Margaric (C17:0) g - Đường tổng số (Sugar) g - Stearic (C18:0) g - Galactoza (Galactose) g - Arachidic (C20:0) g - Maltoza (Maltose) g - Behenic (22:0) g - Lactoza (Lactose) g - Lignoceric (C24:0) g - Fructoza (Fructose) g - TS acid béo không no 1 nối đôi g - Glucoza (Glucose) g - (Total monounsaturated fatty acid) Sacaroza (Sucrose) g - Myristoleic (C14:1) g - Calci (Calcium) mg - Palmitoleic (C16:1) g - Sắt (Iron) mg - Oleic (C18:1) g - MMaaggiiêê ((MMaaggnneessiiuumm)) mmgg -- TTSS aacciidd bbééoo kkhhôônngg n"
+    },
+    {
+      "source_page": 492,
+      "id": "fao_vn_2007_11019_raw",
+      "name_primary": "ThÞt lîn hép",
+      "name_en": "Pork, canned",
+      "state": "raw",
+      "edible_portion_pct": 0.0,
+      "per_100g": {
+        "calories": 344.0,
+        "protein": 17.3,
+        "carbohydrate": 2.7,
+        "fat": 29.3,
+        "fiber": null,
+        "sodium": null,
+        "calcium": 9.0,
+        "iron": 1.2,
+        "extra": {
+          "magnesium": null,
+          "phosphorus": null,
+          "potassium": null,
+          "zinc": null,
+          "copper": null,
+          "manganese": null,
+          "retinol": null,
+          "beta_carotene": null,
+          "vitamin_c": null
+        }
+      },
+      "source_excerpt": "Tªn thùc phÈm (Vietnamese): ThÞt lîn hép STT: 458 Tªn tiÕng Anh (English): Pork, canned M· sè: 11019 Thμnh phÇn dinh d−ìng trong 100g phÇn ¨n ®−îc (100 grams edible portion) Th¶i bá (%): 0.0 Thμnh phÇn dinh d−ìng ĐV Hμm lượng TLTK Thμnh phÇn dinh d−ìng ĐV Hμm lượng TLTK (Nutrients) (Unit) (Value) (Source) (Nutrients) (Unit) (Value) (Source) Nước (Water) g 49.0 1 Tổng số isoflavon (Total isoflavone) mg 0 3 Năng lượng (Energy) KCal 344 Daidzein mg 0 3 KJ 1438 Genistein mg 0 3 Protein g 17.3 1 Glycetin mg 0 3 Lipid (Fat) g 29.3 1 Tổng số acid béo no g - Glucid (Carbohydrate) g 2.7 1 (Total saturated fatty acid) Celluloza (Fiber) g - Palmitic (C16:0) g 2.100 3 Tro (Ash) g 1.7 1 Margaric (C17:0) g 0.000 3 Đường tổng số (Sugar) g - Stearic (C18:0) g 0.450 3 Galactoza (Galactose) g - Arachidic (C20:0) g 0.000 3 Maltoza (Maltose) g - Behenic (22:0) g 0.000 3 Lactoza (Lactose) g - Lignoceric (C24:0) g 0.000 3 Fructoza (Fructose) g - TS acid béo không no 1 nối đôi g - Glucoza (Glucose) g - (Total monounsaturated fatty acid) Sacaroza (Sucrose) g - Myristoleic (C14:1) g - Calci (Calcium) mg 9 1 Palmitoleic (C16:1) g - Sắt (Iron) mg 1.20 1 Oleic (C18:1) g - MMaaggiiêê ((MMaaggnneessiiuumm)) mmg"
+    },
+    {
+      "source_page": 499,
+      "id": "fao_vn_2007_12003_raw",
+      "name_primary": "B¸nh ch¶",
+      "name_en": "Sweet meat pie in lumps",
+      "state": "raw",
+      "edible_portion_pct": 0.0,
+      "per_100g": {
+        "calories": 395.0,
+        "protein": 3.4,
+        "carbohydrate": 80.5,
+        "fat": 6.6,
+        "fiber": 1.0,
+        "sodium": null,
+        "calcium": 42.0,
+        "iron": 1.9,
+        "extra": {
+          "magnesium": null,
+          "phosphorus": null,
+          "potassium": null,
+          "zinc": null,
+          "copper": null,
+          "manganese": null,
+          "retinol": null,
+          "beta_carotene": null,
+          "vitamin_c": null
+        }
+      },
+      "source_excerpt": "Tªn thùc phÈm (Vietnamese): B¸nh ch¶ STT: 463 Tªn tiÕng Anh (English): Sweet meat pie in lumps M· sè: 12003 Thμnh phÇn dinh d−ìng trong 100g phÇn ¨n ®−îc (100 grams edible portion) Th¶i bá (%): 0.0 Thμnh phÇn dinh d−ìng ĐV Hμm lượng TLTK Thμnh phÇn dinh d−ìng ĐV Hμm lượng TLTK (Nutrients) (Unit) (Value) (Source) (Nutrients) (Unit) (Value) (Source) Nước (Water) g 8.0 1 Tổng số isoflavon (Total isoflavone) mg 0 3 Năng lượng (Energy) KCal 395 Daidzein mg 0 3 KJ 1653 Genistein mg 0 3 Protein g 3.4 1 Glycetin mg 0 3 Lipid (Fat) g 6.6 1 Tổng số acid béo no g - Glucid (Carbohydrate) g 80.5 1 (Total saturated fatty acid) Celluloza (Fiber) g 1.0 1 Palmitic (C16:0) g - Tro (Ash) g 0.5 1 Margaric (C17:0) g - Đường tổng số (Sugar) g - Stearic (C18:0) g - Galactoza (Galactose) g - Arachidic (C20:0) g - Maltoza (Maltose) g - Behenic (22:0) g - Lactoza (Lactose) g - Lignoceric (C24:0) g - Fructoza (Fructose) g - TS acid béo không no 1 nối đôi g - Glucoza (Glucose) g - (Total monounsaturated fatty acid) Sacaroza (Sucrose) g - Myristoleic (C14:1) g - Calci (Calcium) mg 42 1 Palmitoleic (C16:1) g - Sắt (Iron) mg 1.90 1 Oleic (C18:1) g - MMaaggiiêê ((MMaaggnneessiiuumm)) mmgg -- TTSS aacciidd bbééoo "
+    },
+    {
+      "source_page": 518,
+      "id": "fao_vn_2007_12022_raw",
+      "name_primary": "KÑo s« c« la",
+      "name_en": "Sweets with chocolate",
+      "state": "raw",
+      "edible_portion_pct": 0.0,
+      "per_100g": {
+        "calories": 388.0,
+        "protein": 1.6,
+        "carbohydrate": 85.1,
+        "fat": 4.6,
+        "fiber": 1.2,
+        "sodium": null,
+        "calcium": null,
+        "iron": null,
+        "extra": {
+          "magnesium": null,
+          "phosphorus": null,
+          "potassium": null,
+          "zinc": null,
+          "copper": null,
+          "manganese": null,
+          "retinol": null,
+          "beta_carotene": null,
+          "vitamin_c": null
+        }
+      },
+      "source_excerpt": "Tªn thùc phÈm (Vietnamese): KÑo s« c« la STT: 482 Tªn tiÕng Anh (English): Sweets with chocolate M· sè: 12022 Thμnh phÇn dinh d−ìng trong 100g phÇn ¨n ®−îc (100 grams edible portion) Th¶i bá (%): 0.0 Thμnh phÇn dinh d−ìng ĐV Hμm lượng TLTK Thμnh phÇn dinh d−ìng ĐV Hμm lượng TLTK (Nutrients) (Unit) (Value) (Source) (Nutrients) (Unit) (Value) (Source) Nước (Water) g 6.8 1 Tổng số isoflavon (Total isoflavone) mg 0 3 Năng lượng (Energy) KCal 388 Daidzein mg 0 3 KJ 1624 Genistein mg 0 3 Protein g 1.6 1 Glycetin mg 0 3 Lipid (Fat) g 4.6 1 Tổng số acid béo no g - Glucid (Carbohydrate) g 85.1 1 (Total saturated fatty acid) Celluloza (Fiber) g 1.2 1 Palmitic (C16:0) g 4.440 3 Tro (Ash) g 0.7 1 Margaric (C17:0) g - Đường tổng số (Sugar) g - Stearic (C18:0) g 5.150 3 Galactoza (Galactose) g - Arachidic (C20:0) g - Maltoza (Maltose) g - Behenic (22:0) g - Lactoza (Lactose) g - Lignoceric (C24:0) g - Fructoza (Fructose) g - TS acid béo không no 1 nối đôi g - Glucoza (Glucose) g - (Total monounsaturated fatty acid) Sacaroza (Sucrose) g - Myristoleic (C14:1) g - Calci (Calcium) mg - Palmitoleic (C16:1) g - Sắt (Iron) mg - Oleic (C18:1) g - MMaaggiiêê ((MMaaggnneessiiuumm)) mmgg -- TTSS aacciidd b"
+    },
+    {
+      "source_page": 558,
+      "id": "fao_vn_2007_14008_raw",
+      "name_primary": "N−íc kho¸ng",
+      "name_en": "Mineral water",
+      "state": "raw",
+      "edible_portion_pct": 0.0,
+      "per_100g": {
+        "calories": 0.0,
+        "protein": 0.0,
+        "carbohydrate": 0.0,
+        "fat": 0.0,
+        "fiber": 0.0,
+        "sodium": null,
+        "calcium": 5.0,
+        "iron": 0.01,
+        "extra": {
+          "magnesium": null,
+          "phosphorus": null,
+          "potassium": null,
+          "zinc": null,
+          "copper": null,
+          "manganese": null,
+          "retinol": null,
+          "beta_carotene": null,
+          "vitamin_c": null
+        }
+      },
+      "source_excerpt": "Tªn thùc phÈm (Vietnamese): N−íc kho¸ng STT: 518 Tªn tiÕng Anh (English): Mineral water M· sè: 14008 Thμnh phÇn dinh d−ìng trong 100g phÇn ¨n ®−îc (100 grams edible portion) Th¶i bá (%): 0.0 Thμnh phÇn dinh d−ìng ĐV Hμm lượng TLTK Thμnh phÇn dinh d−ìng ĐV Hμm lượng TLTK (Nutrients) (Unit) (Value) (Source) (Nutrients) (Unit) (Value) (Source) Nước (Water) g 99.7 1 Tổng số isoflavon (Total isoflavone) mg 0 3 Năng lượng (Energy) KCal 0 Daidzein mg 0 3 KJ 0 Genistein mg 0 3 Protein g 0.0 3 Glycetin mg 0 3 Lipid (Fat) g 0.0 3 Tổng số acid béo no g - Glucid (Carbohydrate) g 0.0 3 (Total saturated fatty acid) Celluloza (Fiber) g 0.0 1 Palmitic (C16:0) g - Tro (Ash) g 0.3 1 Margaric (C17:0) g - Đường tổng số (Sugar) g 0 3 Stearic (C18:0) g - Galactoza (Galactose) g 0 3 Arachidic (C20:0) g - Maltoza (Maltose) g 0 3 Behenic (22:0) g - Lactoza (Lactose) g 0 3 Lignoceric (C24:0) g - Fructoza (Fructose) g 0 3 TS acid béo không no 1 nối đôi g - Glucoza (Glucose) g 0 3 (Total monounsaturated fatty acid) Sacaroza (Sucrose) g 0 3 Myristoleic (C14:1) g - Calci (Calcium) mg 5 1 Palmitoleic (C16:1) g - Sắt (Iron) mg 0.01 1 Oleic (C18:1) g - MMaaggiiêê ((MMaaggnneessiiuumm)) mmgg -- TTSS aacciidd bbééoo"
+    }
+  ]
+}
