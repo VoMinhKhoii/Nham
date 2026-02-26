@@ -56,6 +56,8 @@ Supabase uses timestamp-based filenames: `YYYYMMDDHHMMSS_description.sql`
 |------|--------|-------------|
 | `20260224095657_setup_user_profiles.sql` | A (Drizzle) | `user_profiles` table with all columns and CHECK constraints |
 | `20260224100032_rls_and_triggers.sql` | B (Manual) | RLS policies + `handle_new_user` trigger |
+| `20260226172553_add_food_composition.sql` | A (Drizzle) | `vietnamese_food_composition` table with 38 columns |
+| `20260226172614_food_composition_rls.sql` | B (Manual) | Read-only RLS policy for food composition data |
 
 ## DB Client Usage
 
@@ -69,3 +71,28 @@ const profile = await db.query.userProfiles.findFirst({
 ```
 
 The `db` instance uses `postgres-js` under the hood with `DATABASE_URL` from env.
+
+## CLI Commands
+
+### Local (Drizzle)
+
+| Command | Description |
+|---------|-------------|
+| `bun db:generate` | Generate migration from schema changes |
+| `bun db:migrate` | Apply migrations locally via Drizzle |
+| `bun db:studio` | Open Drizzle Studio (DB browser) |
+
+### Remote (Supabase)
+
+| Command | Description |
+|---------|-------------|
+| `bun dbr:reset` | Reset linked remote DB, re-run migrations + seed.sql |
+| `bun dbr:push` | Push local migrations to remote |
+| `bun dbr:pull` | Pull remote schema changes into local migrations |
+| `bun dbr:diff` | Diff local schema against remote |
+| `bun dbr:status` | List migration status on remote |
+
+## Seeding Reference Data
+
+Supabase runs `supabase/seed.sql` automatically on `bun dbr:reset`.
+The seed file inserts all 526 VTN FCT 2007 records into `vietnamese_food_composition`.

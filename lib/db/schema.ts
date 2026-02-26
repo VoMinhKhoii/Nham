@@ -2,7 +2,9 @@ import { sql } from 'drizzle-orm';
 import {
   boolean,
   check,
+  date,
   decimal,
+  numeric,
   pgSchema,
   pgTable,
   smallint,
@@ -108,6 +110,65 @@ export const userProfiles = pgTable(
     check(
       'user_profiles_sugar_braised_check',
       sql`${table.sugarBraised} IN ('low', 'medium', 'high')`
+    ),
+  ]
+);
+
+export const vietnameseFoodComposition = pgTable(
+  'vietnamese_food_composition',
+  {
+    id: text('id').primaryKey(),
+    namePrimary: text('name_primary').notNull(),
+    nameAlt: text('name_alt').array(),
+    nameEn: text('name_en').notNull(),
+    typeVn: text('type_vn').notNull(),
+    typeEn: text('type_en').notNull(),
+    source: text('source').notNull().default('FAO_VN_2007'),
+    state: text('state').notNull(),
+    inediblePortionPct: numeric('inedible_portion_pct'),
+
+    // Macros
+    caloriesKcal: numeric('calories_kcal'),
+    proteinG: numeric('protein_g'),
+    carbohydrateG: numeric('carbohydrate_g'),
+    fatG: numeric('fat_g'),
+    fiberG: numeric('fiber_g'),
+
+    // Minerals
+    sodiumMg: numeric('sodium_mg'),
+    calciumMg: numeric('calcium_mg'),
+    ironMg: numeric('iron_mg'),
+    magnesiumMg: numeric('magnesium_mg'),
+    phosphorusMg: numeric('phosphorus_mg'),
+    potassiumMg: numeric('potassium_mg'),
+    zincMg: numeric('zinc_mg'),
+    copperMcg: numeric('copper_mcg'),
+    manganeseMg: numeric('manganese_mg'),
+
+    // Fat-soluble vitamins
+    betaCaroteneMcg: numeric('beta_carotene_mcg'),
+    vitaminAMcg: numeric('vitamin_a_mcg'),
+    vitaminDMcg: numeric('vitamin_d_mcg'),
+    vitaminEMg: numeric('vitamin_e_mg'),
+    vitaminKMcg: numeric('vitamin_k_mcg'),
+
+    // Water-soluble vitamins
+    vitaminCMg: numeric('vitamin_c_mg'),
+    vitaminB1Mg: numeric('vitamin_b1_mg'),
+    vitaminB2Mg: numeric('vitamin_b2_mg'),
+    vitaminPpMg: numeric('vitamin_pp_mg'),
+    vitaminB5Mg: numeric('vitamin_b5_mg'),
+    vitaminB6Mg: numeric('vitamin_b6_mg'),
+    vitaminB9Mcg: numeric('vitamin_b9_mcg'),
+    vitaminB12Mcg: numeric('vitamin_b12_mcg'),
+    vitaminHMcg: numeric('vitamin_h_mcg'),
+
+    lastVerified: date('last_verified'),
+  },
+  (table) => [
+    check(
+      'vietnamese_food_composition_state_check',
+      sql`${table.state} IN ('raw', 'cooked')`
     ),
   ]
 );

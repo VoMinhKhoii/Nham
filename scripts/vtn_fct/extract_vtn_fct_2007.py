@@ -402,12 +402,12 @@ def extract_header(text: str) -> tuple[str, str, str, int | None, float | None] 
     normalized_text = re.sub(r'\s+', ' ', text)
 
     vn_match = re.search(
-        r'Vietnamese\):\s*(.*?)\s+STT:\s*([0-9]+)',
+        r'Vietnamese\):?\s*(.*?)\s+STT:?\s*([0-9]+)',
         normalized_text,
         flags=re.IGNORECASE,
     )
     en_match = re.search(
-        r'English\):\s*(.*?)\s+M[^:]{0,14}:\s*([0-9\s]{3,8})',
+        r'English\):?\s*(.*?)\s+M[^:]{0,14}:?\s*([0-9\s]{3,8})',
         normalized_text,
     )
     edible_match = re.search(
@@ -490,7 +490,7 @@ def run_extraction(
                 print(deduplicate_text(text))
                 print(f'{"="*60}\n')
 
-            if 'Vietnamese):' not in text or 'English):' not in text:
+            if 'Vietnamese)' not in text or 'English)' not in text:
                 skipped_pages.append(page_index)
                 continue
 

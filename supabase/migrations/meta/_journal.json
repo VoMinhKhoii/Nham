@@ -8,6 +8,13 @@
       "when": 1771940343671,
       "tag": "20260224095657_setup_user_profiles",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1772126743392,
+      "tag": "20260226172553_add_food_composition",
+      "breakpoints": true
     }
   ]
 }

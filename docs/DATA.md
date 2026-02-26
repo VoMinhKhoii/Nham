@@ -5,15 +5,16 @@
 ### Overview
 
 - **Source**: FAO/WHO Vietnamese Food Composition Table 2007
-- **Records**: 525 food items
+- **Records**: 526 food items
 - **Location**: `data/vtn_fct_2007/`
 - **Extraction script**: `scripts/vtn_fct/extract_vtn_fct_2007.py`
+- **Enrichment script**: `scripts/vtn_fct/enrich_extracted_data.py`
 
 ### Output Files
 
 | File | Description |
 |------|-------------|
-| `extracted_ingredients.json` | 525 records with full nutritional data |
+| `extracted_ingredients.json` | 526 records with full nutritional data |
 | `extracted_ingredients.csv` | Same data in flat CSV format |
 | `extraction_report.json` | Extraction statistics and error log |
 | `page_index.json` | Mapping of record `id` → PDF source page (for validation) |
@@ -32,6 +33,9 @@ python3 scripts/vtn_fct/extract_vtn_fct_2007.py \
   --out data/vtn_fct_2007 \
   --ocr-header-fallback
 
+# Enrich with food group types (type_vn, type_en)
+python3 scripts/vtn_fct/enrich_extracted_data.py
+
 # Run quality validation
 python3 scripts/vtn_fct/validate_extraction_quality.py
 ```
@@ -46,6 +50,8 @@ Each record in `extracted_ingredients.json` follows this structure:
   "name_primary": "string",    // Vietnamese name with diacritics (Unicode)
   "name_alt": ["string"],      // Alternate names (original TCVN3 if different)
   "name_en": "string",         // English name from PDF
+  "type_vn": "string",         // Food group name in Vietnamese
+  "type_en": "string",         // Food group name in English
   "source": "FAO_VN_2007",     // Always this value
   "state": "raw | cooked",     // Inferred from name keywords
   "inedible_portion_pct": 0.0, // Waste/inedible portion percentage ("Thải bỏ %")
@@ -94,7 +100,26 @@ Each record in `extracted_ingredients.json` follows this structure:
 
 **Null values**: A `null` nutrient value means the PDF had a dash (`-`) or no data for that food item. A value of `0.0` means the PDF explicitly listed zero.
 
-### Nutrient Coverage (525 records)
+### Food Groups (14 groups, 526 records)
+
+| Group | Code prefix | Vietnamese | English | Count |
+|-------|-------------|-----------|---------|-------|
+| 1 | 1xxx | Ngũ cốc và sản phẩm chế biến | Cereal and products | 23 |
+| 2 | 2xxx | Khoai củ và sản phẩm chế biến | Starchy root and products | 26 |
+| 3 | 3xxx | Hạt, quả giàu đạm, béo và sản phẩm chế biến | Pulses, nuts, seeds and products | 33 |
+| 4 | 4xxx | Rau, quả, củ dùng làm rau | Vegetables | 126 |
+| 5 | 5xxx | Quả chín | Fruits | 56 |
+| 6 | 6xxx | Dầu, mỡ, bơ | Oil, lard, butter | 14 |
+| 7 | 7xxx | Thịt và sản phẩm chế biến | Meat and meat products | 82 |
+| 8 | 8xxx | Thủy sản và sản phẩm chế biến | Fish, shellfish and products | 59 |
+| 9 | 9xxx | Trứng và sản phẩm chế biến | Egg and products | 11 |
+| 10 | 10xxx | Sữa và sản phẩm chế biến | Milk and products | 9 |
+| 11 | 11xxx | Đồ hộp | Canned food | 21 |
+| 12 | 12xxx | Đồ ngọt (đường, bánh, mứt, kẹo) | Sugar, confectionery | 27 |
+| 13 | 13xxx | Gia vị, nước chấm | Condiments, traditional sauces | 23 |
+| 14 | 14xxx | Nước giải khát, bia, rượu | Beverage and liquor | 16 |
+
+### Nutrient Coverage (526 records)
 
 | Nutrient | Non-null | Coverage |
 |----------|----------|----------|
@@ -131,7 +156,7 @@ Each record in `extracted_ingredients.json` follows this structure:
 
 | Check | Result |
 |-------|--------|
-| Total records | 525 |
+| Total records | 526 |
 | Duplicate IDs | 0 |
 | Mojibake names remaining | 0 |
 | Suspicious English names | 57 |
