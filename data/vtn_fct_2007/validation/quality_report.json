@@ -1,0 +1,203 @@
+{
+  "total_records": 525,
+  "duplicate_ids": 0,
+  "mojibake_name_rows": 0,
+  "suspicious_english_name_rows": 57,
+  "missing_core_nutrients": {
+    "calories_kcal": 0,
+    "protein_g": 1,
+    "carbohydrate_g": 0,
+    "fat_g": 75,
+    "fiber_g": 20,
+    "sodium_mg": 276,
+    "calcium_mg": 47,
+    "iron_mg": 98
+  },
+  "nutrient_coverage": {
+    "calories_kcal": {
+      "non_null": 525,
+      "null": 0,
+      "pct": 100.0
+    },
+    "protein_g": {
+      "non_null": 524,
+      "null": 1,
+      "pct": 99.8
+    },
+    "carbohydrate_g": {
+      "non_null": 525,
+      "null": 0,
+      "pct": 100.0
+    },
+    "fat_g": {
+      "non_null": 450,
+      "null": 75,
+      "pct": 85.7
+    },
+    "fiber_g": {
+      "non_null": 505,
+      "null": 20,
+      "pct": 96.2
+    },
+    "sodium_mg": {
+      "non_null": 249,
+      "null": 276,
+      "pct": 47.4
+    },
+    "calcium_mg": {
+      "non_null": 478,
+      "null": 47,
+      "pct": 91.0
+    },
+    "iron_mg": {
+      "non_null": 427,
+      "null": 98,
+      "pct": 81.3
+    },
+    "magnesium_mg": {
+      "non_null": 241,
+      "null": 284,
+      "pct": 45.9
+    },
+    "phosphorus_mg": {
+      "non_null": 473,
+      "null": 52,
+      "pct": 90.1
+    },
+    "potassium_mg": {
+      "non_null": 249,
+      "null": 276,
+      "pct": 47.4
+    },
+    "zinc_mg": {
+      "non_null": 233,
+      "null": 292,
+      "pct": 44.4
+    },
+    "copper_mcg": {
+      "non_null": 234,
+      "null": 291,
+      "pct": 44.6
+    },
+    "manganese_mg": {
+      "non_null": 218,
+      "null": 307,
+      "pct": 41.5
+    },
+    "beta_carotene_mcg": {
+      "non_null": 447,
+      "null": 78,
+      "pct": 85.1
+    },
+    "vitamin_a_mcg": {
+      "non_null": 373,
+      "null": 152,
+      "pct": 71.0
+    },
+    "vitamin_d_mcg": {
+      "non_null": 39,
+      "null": 486,
+      "pct": 7.4
+    },
+    "vitamin_e_mg": {
+      "non_null": 160,
+      "null": 365,
+      "pct": 30.5
+    },
+    "vitamin_k_mcg": {
+      "non_null": 161,
+      "null": 364,
+      "pct": 30.7
+    },
+    "vitamin_c_mg": {
+      "non_null": 426,
+      "null": 99,
+      "pct": 81.1
+    },
+    "vitamin_b1_mg": {
+      "non_null": 355,
+      "null": 170,
+      "pct": 67.6
+    },
+    "vitamin_b2_mg": {
+      "non_null": 360,
+      "null": 165,
+      "pct": 68.6
+    },
+    "vitamin_pp_mg": {
+      "non_null": 357,
+      "null": 168,
+      "pct": 68.0
+    },
+    "vitamin_b5_mg": {
+      "non_null": 199,
+      "null": 326,
+      "pct": 37.9
+    },
+    "vitamin_b6_mg": {
+      "non_null": 214,
+      "null": 311,
+      "pct": 40.8
+    },
+    "vitamin_b9_mcg": {
+      "non_null": 206,
+      "null": 319,
+      "pct": 39.2
+    },
+    "vitamin_b12_mcg": {
+      "non_null": 206,
+      "null": 319,
+      "pct": 39.2
+    },
+    "vitamin_h_mcg": {
+      "non_null": 70,
+      "null": 455,
+      "pct": 13.3
+    }
+  },
+  "examples": {
+    "mojibake": [],
+    "suspicious_english": [
+      {
+        "id": "fao_vn_2007_2001_raw",
+        "name_en": "Water-caltrops"
+      },
+      {
+        "id": "fao_vn_2007_2011_raw",
+        "name_en": "Water-taro"
+      },
+      {
+        "id": "fao_vn_2007_4005_raw",
+        "name_en": "Tomato"
+      },
+      {
+        "id": "fao_vn_2007_4007_raw",
+        "name_en": "Carrots"
+      },
+      {
+        "id": "fao_vn_2007_4009_raw",
+        "name_en": "Aubergine"
+      },
+      {
+        "id": "fao_vn_2007_4014_raw",
+        "name_en": "Watercress"
+      },
+      {
+        "id": "fao_vn_2007_4023_raw",
+        "name_en": "Pachyrrhizus"
+      },
+      {
+        "id": "fao_vn_2007_4027_raw",
+        "name_en": "Cucumber"
+      },
+      {
+        "id": "fao_vn_2007_4046_raw",
+        "name_en": "Lolot"
+      },
+      {
+        "id": "fao_vn_2007_4064_raw",
+        "name_en": ""
+      }
+    ]
+  }
+}
