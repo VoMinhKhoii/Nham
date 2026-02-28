@@ -4,12 +4,16 @@ import {
   check,
   date,
   decimal,
+  index,
+  jsonb,
   numeric,
   pgSchema,
   pgTable,
+  real,
   smallint,
   text,
   timestamp,
+  unique,
   uuid,
 } from 'drizzle-orm/pg-core';
 
@@ -172,3 +176,164 @@ export const vietnameseFoodComposition = pgTable(
     ),
   ]
 );
+
+// ---------------------------------------------------------------------------
+// Meals
+// ---------------------------------------------------------------------------
+
+export const meals = pgTable(
+  'meals',
+  {
+    id: uuid('id').primaryKey().default(sql`gen_random_uuid()`),
+    userId: uuid('user_id')
+      .notNull()
+      .references(() => authUsers.id, { onDelete: 'cascade' }),
+    rawInput: text('raw_input').notNull(),
+    mealSlot: text('meal_slot'),
+    slotOverride: boolean('slot_override').default(false),
+    confidenceOverall: text('confidence_overall'),
+    loggedAt: timestamp('logged_at', { withTimezone: true })
+      .notNull()
+      .defaultNow(),
+
+    // Bounded nutrition — JSONB {low, mid, high}
+    caloriesKcal: jsonb('calories_kcal'),
+    proteinG: jsonb('protein_g'),
+    carbohydrateG: jsonb('carbohydrate_g'),
+    fatG: jsonb('fat_g'),
+    fiberG: jsonb('fiber_g'),
+    sodiumMg: jsonb('sodium_mg'),
+    calciumMg: jsonb('calcium_mg'),
+    ironMg: jsonb('iron_mg'),
+    magnesiumMg: jsonb('magnesium_mg'),
+    phosphorusMg: jsonb('phosphorus_mg'),
+    potassiumMg: jsonb('potassium_mg'),
+    zincMg: jsonb('zinc_mg'),
+    copperMcg: jsonb('copper_mcg'),
+    manganeseMg: jsonb('manganese_mg'),
+    betaCaroteneMcg: jsonb('beta_carotene_mcg'),
+    vitaminAMcg: jsonb('vitamin_a_mcg'),
+    vitaminDMcg: jsonb('vitamin_d_mcg'),
+    vitaminEMg: jsonb('vitamin_e_mg'),
+    vitaminKMcg: jsonb('vitamin_k_mcg'),
+    vitaminCMg: jsonb('vitamin_c_mg'),
+    vitaminB1Mg: jsonb('vitamin_b1_mg'),
+    vitaminB2Mg: jsonb('vitamin_b2_mg'),
+    vitaminPpMg: jsonb('vitamin_pp_mg'),
+    vitaminB5Mg: jsonb('vitamin_b5_mg'),
+    vitaminB6Mg: jsonb('vitamin_b6_mg'),
+    vitaminB9Mcg: jsonb('vitamin_b9_mcg'),
+    vitaminB12Mcg: jsonb('vitamin_b12_mcg'),
+    vitaminHMcg: jsonb('vitamin_h_mcg'),
+
+    createdAt: timestamp('created_at', { withTimezone: true })
+      .notNull()
+      .defaultNow(),
+    updatedAt: timestamp('updated_at', { withTimezone: true })
+      .notNull()
+      .defaultNow(),
+  },
+  (table) => [
+    check(
+      'meals_meal_slot_check',
+      sql`${table.mealSlot} IN ('breakfast', 'brunch', 'lunch', 'dinner', 'snack')`
+    ),
+    check(
+      'meals_confidence_overall_check',
+      sql`${table.confidenceOverall} IN ('high', 'medium', 'low')`
+    ),
+    index('meals_user_logged_at_idx').on(table.userId, table.loggedAt),
+  ]
+);
+
+// ---------------------------------------------------------------------------
+// Meal Items
+// ---------------------------------------------------------------------------
+
+export const mealItems = pgTable('meal_items', {
+  id: uuid('id').primaryKey().default(sql`gen_random_uuid()`),
+  mealId: uuid('meal_id')
+    .notNull()
+    .references(() => meals.id, { onDelete: 'cascade' }),
+  foodCompositionId: text('food_composition_id').references(
+    () => vietnameseFoodComposition.id,
+    { onDelete: 'set null' }
+  ),
+  ingredientName: text('ingredient_name').notNull(),
+  estimatedGrams: real('estimated_grams'),
+  userFacingUnit: text('user_facing_unit'),
+  cookingMethod: text('cooking_method'),
+  matchConfidence: real('match_confidence'),
+
+  // Bounded nutrition — JSONB {low, mid, high}
+  caloriesKcal: jsonb('calories_kcal'),
+  proteinG: jsonb('protein_g'),
+  carbohydrateG: jsonb('carbohydrate_g'),
+  fatG: jsonb('fat_g'),
+  fiberG: jsonb('fiber_g'),
+  sodiumMg: jsonb('sodium_mg'),
+  calciumMg: jsonb('calcium_mg'),
+  ironMg: jsonb('iron_mg'),
+  magnesiumMg: jsonb('magnesium_mg'),
+  phosphorusMg: jsonb('phosphorus_mg'),
+  potassiumMg: jsonb('potassium_mg'),
+  zincMg: jsonb('zinc_mg'),
+  copperMcg: jsonb('copper_mcg'),
+  manganeseMg: jsonb('manganese_mg'),
+  betaCaroteneMcg: jsonb('beta_carotene_mcg'),
+  vitaminAMcg: jsonb('vitamin_a_mcg'),
+  vitaminDMcg: jsonb('vitamin_d_mcg'),
+  vitaminEMg: jsonb('vitamin_e_mg'),
+  vitaminKMcg: jsonb('vitamin_k_mcg'),
+  vitaminCMg: jsonb('vitamin_c_mg'),
+  vitaminB1Mg: jsonb('vitamin_b1_mg'),
+  vitaminB2Mg: jsonb('vitamin_b2_mg'),
+  vitaminPpMg: jsonb('vitamin_pp_mg'),
+  vitaminB5Mg: jsonb('vitamin_b5_mg'),
+  vitaminB6Mg: jsonb('vitamin_b6_mg'),
+  vitaminB9Mcg: jsonb('vitamin_b9_mcg'),
+  vitaminB12Mcg: jsonb('vitamin_b12_mcg'),
+  vitaminHMcg: jsonb('vitamin_h_mcg'),
+
+  createdAt: timestamp('created_at', { withTimezone: true })
+    .notNull()
+    .defaultNow(),
+});
+
+// ---------------------------------------------------------------------------
+// Body Weight Log
+// ---------------------------------------------------------------------------
+
+export const bodyWeightLog = pgTable(
+  'body_weight_log',
+  {
+    id: uuid('id').primaryKey().default(sql`gen_random_uuid()`),
+    userId: uuid('user_id')
+      .notNull()
+      .references(() => authUsers.id, { onDelete: 'cascade' }),
+    loggedDate: date('logged_date').notNull(),
+    weightKg: numeric('weight_kg', { precision: 5, scale: 2 }).notNull(),
+    createdAt: timestamp('created_at', { withTimezone: true })
+      .notNull()
+      .defaultNow(),
+  },
+  (table) => [
+    unique('body_weight_log_user_date_uniq').on(table.userId, table.loggedDate),
+  ]
+);
+
+// ---------------------------------------------------------------------------
+// Unmatched Ingredients
+// ---------------------------------------------------------------------------
+
+export const unmatchedIngredients = pgTable('unmatched_ingredients', {
+  id: uuid('id').primaryKey().default(sql`gen_random_uuid()`),
+  mealId: uuid('meal_id').references(() => meals.id, {
+    onDelete: 'set null',
+  }),
+  queryText: text('query_text').notNull(),
+  mealContext: text('meal_context'),
+  createdAt: timestamp('created_at', { withTimezone: true })
+    .notNull()
+    .defaultNow(),
+});
