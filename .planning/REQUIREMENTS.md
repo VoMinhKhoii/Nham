@@ -11,7 +11,7 @@
 - [x] **DB-02**: `meals` table with denormalized nutrition totals (JSONB bounds: low/mid/high per macro)
 - [x] **DB-03**: `meal_items` table linking meals to ingredients with adjusted nutrition
 - [x] **DB-04**: `body_weight_log` table with daily weight entries
-- [ ] **DB-05**: RLS policies on all new tables (users access own data only)
+- [x] **DB-05**: RLS policies on all new tables (users access own data only)
 
 ### Onboarding
 
@@ -116,7 +116,7 @@ Deferred to future releases. Tracked but not in current roadmap.
 | DB-02 | Phase 1 | Complete |
 | DB-03 | Phase 1 | Complete |
 | DB-04 | Phase 1 | Complete |
-| DB-05 | Phase 1 | Pending |
+| DB-05 | Phase 1 | Complete |
 | ONB-01 | Phase 2 | Pending |
 | ONB-02 | Phase 2 | Pending |
 | ONB-03 | Phase 2 | Pending |
