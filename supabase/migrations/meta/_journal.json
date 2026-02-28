@@ -15,6 +15,13 @@
       "when": 1772126743392,
       "tag": "20260226172553_add_food_composition",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1772293226722,
+      "tag": "20260228154026_add_meals_weight_tables",
+      "breakpoints": true
     }
   ]
 }
