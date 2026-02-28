@@ -7,7 +7,7 @@
 
 ### Database & Infrastructure
 
-- [ ] **DB-01**: `pgvector` extension enabled with embeddings for semantic ingredient matching (handles Vietnamese synonyms like thịt ba chỉ/ba rọi/thịt mỡ and misspellings)
+- [x] **DB-01**: `pgvector` extension enabled with embeddings for semantic ingredient matching (handles Vietnamese synonyms like thịt ba chỉ/ba rọi/thịt mỡ and misspellings)
 - [x] **DB-02**: `meals` table with denormalized nutrition totals (JSONB bounds: low/mid/high per macro)
 - [x] **DB-03**: `meal_items` table linking meals to ingredients with adjusted nutrition
 - [x] **DB-04**: `body_weight_log` table with daily weight entries
@@ -112,7 +112,7 @@ Deferred to future releases. Tracked but not in current roadmap.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| DB-01 | Phase 1 | Pending |
+| DB-01 | Phase 1 | Complete |
 | DB-02 | Phase 1 | Complete |
 | DB-03 | Phase 1 | Complete |
 | DB-04 | Phase 1 | Complete |
