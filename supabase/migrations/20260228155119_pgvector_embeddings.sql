@@ -8,6 +8,9 @@
 -- generate.
 -- =============================================================================
 
+-- Ensure extensions schema is on search_path so the vector type resolves
+SET search_path TO public, extensions;
+
 -- -----------------------------------------------------------------------------
 -- 1. Enable pgvector extension
 -- -----------------------------------------------------------------------------
@@ -99,9 +102,20 @@ CREATE INDEX IF NOT EXISTS idx_food_composition_embedding
 --    In that case, comment out the UPDATE below and run the alternative approach
 --    after this migration is applied.
 -- -----------------------------------------------------------------------------
-UPDATE public.vietnamese_food_composition
-SET embedding = ai.embed(
-  'gte-small',
-  public.build_food_embedding_text(name_primary, name_alt, name_en)
-)::vector(384)
-WHERE embedding IS NULL;
+-- Only generate embeddings if the ai schema is available (Supabase hosted AI).
+-- If not, embeddings must be generated via Edge Function or external script.
+DO $$
+BEGIN
+  IF EXISTS (SELECT 1 FROM pg_namespace WHERE nspname = 'ai') THEN
+    EXECUTE '
+      UPDATE public.vietnamese_food_composition
+      SET embedding = ai.embed(
+        ''gte-small'',
+        public.build_food_embedding_text(name_primary, name_alt, name_en)
+      )::vector(384)
+      WHERE embedding IS NULL';
+    RAISE NOTICE 'Embeddings generated via ai.embed';
+  ELSE
+    RAISE NOTICE 'ai schema not available — embeddings must be generated externally (Edge Function or script)';
+  END IF;
+END $$;
