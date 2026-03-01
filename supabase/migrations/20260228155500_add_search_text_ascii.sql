@@ -1,0 +1,1 @@
+ALTER TABLE "vietnamese_food_composition" ADD COLUMN "search_text_ascii" text;

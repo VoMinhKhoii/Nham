@@ -172,6 +172,7 @@ export const vietnameseFoodComposition = pgTable(
 
     // Search infrastructure (populated by triggers/scripts, not app code)
     searchText: text('search_text'),
+    searchTextAscii: text('search_text_ascii'),
     embedding: vector('embedding', { dimensions: 768 }),
   },
   (table) => [

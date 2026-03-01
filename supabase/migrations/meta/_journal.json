@@ -29,6 +29,13 @@
       "when": 1772296200000,
       "tag": "20260228155000_add_search_columns",
       "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1772297100000,
+      "tag": "20260228155500_add_search_text_ascii",
+      "breakpoints": true
     }
   ]
 }
