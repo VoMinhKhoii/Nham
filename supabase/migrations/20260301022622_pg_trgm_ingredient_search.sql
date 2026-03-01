@@ -15,10 +15,8 @@ SET search_path TO public, extensions;
 CREATE EXTENSION IF NOT EXISTS pg_trgm WITH SCHEMA extensions;
 
 -- -----------------------------------------------------------------------------
--- 2. Add search_text column for combined text matching
+-- 2. search_text column exists via Drizzle schema (20260228155000_add_search_columns)
 -- -----------------------------------------------------------------------------
-ALTER TABLE public.vietnamese_food_composition
-  ADD COLUMN IF NOT EXISTS search_text text;
 
 -- Populate search_text for existing rows
 UPDATE public.vietnamese_food_composition

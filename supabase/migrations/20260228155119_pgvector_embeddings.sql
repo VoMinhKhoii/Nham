@@ -17,11 +17,10 @@ SET search_path TO public, extensions;
 CREATE EXTENSION IF NOT EXISTS vector WITH SCHEMA extensions;
 
 -- -----------------------------------------------------------------------------
--- 2. Add embedding column to vietnamese_food_composition
---    384 dimensions matches Supabase's built-in gte-small model
+-- 2. Embedding column exists via Drizzle schema (20260228155000_add_search_columns)
+--    768 dimensions for gemini-embedding-001 (default recommended size)
+--    Embeddings are generated externally via scripts/backfill_embeddings.ts
 -- -----------------------------------------------------------------------------
-ALTER TABLE public.vietnamese_food_composition
-  ADD COLUMN IF NOT EXISTS embedding vector(384);
 
 -- -----------------------------------------------------------------------------
 -- 3. Helper function: build combined text for embedding generation
@@ -31,12 +30,16 @@ ALTER TABLE public.vietnamese_food_composition
 CREATE OR REPLACE FUNCTION public.build_food_embedding_text(
   p_name_primary text,
   p_name_alt text[],
-  p_name_en text
+  p_name_en text,
+  p_type_vn text DEFAULT '',
+  p_type_en text DEFAULT ''
 ) RETURNS text AS $$
 BEGIN
   RETURN p_name_primary
     || COALESCE(' ' || array_to_string(p_name_alt, ' '), '')
-    || ' ' || p_name_en;
+    || ' ' || p_name_en
+    || ' ' || p_type_vn
+    || ' ' || p_type_en;
 END;
 $$ LANGUAGE plpgsql IMMUTABLE;
 
@@ -48,7 +51,7 @@ $$ LANGUAGE plpgsql IMMUTABLE;
 --    (Phase 3) will use confidence scores to decide match quality.
 -- -----------------------------------------------------------------------------
 CREATE OR REPLACE FUNCTION public.match_ingredients(
-  query_embedding vector(384),
+  query_embedding vector(768),
   match_count int DEFAULT 3,
   match_threshold float DEFAULT 0.5
 ) RETURNS TABLE (
@@ -89,33 +92,7 @@ CREATE INDEX IF NOT EXISTS idx_food_composition_embedding
   WITH (m = 16, ef_construction = 64);
 
 -- -----------------------------------------------------------------------------
--- 6. Generate embeddings for all existing rows
---    Uses Supabase's built-in AI embedding function (ai schema).
---
---    NOTE: This requires the ai schema to be available on the Supabase project.
---    Test with: SELECT ai.embed('gte-small', 'test')::vector(384);
---
---    If ai.embed is not available, embeddings must be generated via one of:
---    a) Edge Function calling an embedding API (OpenAI, Supabase hosted model)
---    b) A script using supabase-js that generates embeddings externally
---       and updates the rows in batch
---    In that case, comment out the UPDATE below and run the alternative approach
---    after this migration is applied.
+-- 6. Embeddings generated externally via scripts/backfill_embeddings.ts
+--    using gemini-embedding-001 model (768 dimensions).
+--    This migration only sets up storage + search infrastructure.
 -- -----------------------------------------------------------------------------
--- Only generate embeddings if the ai schema is available (Supabase hosted AI).
--- If not, embeddings must be generated via Edge Function or external script.
-DO $$
-BEGIN
-  IF EXISTS (SELECT 1 FROM pg_namespace WHERE nspname = 'ai') THEN
-    EXECUTE '
-      UPDATE public.vietnamese_food_composition
-      SET embedding = ai.embed(
-        ''gte-small'',
-        public.build_food_embedding_text(name_primary, name_alt, name_en)
-      )::vector(384)
-      WHERE embedding IS NULL';
-    RAISE NOTICE 'Embeddings generated via ai.embed';
-  ELSE
-    RAISE NOTICE 'ai schema not available — embeddings must be generated externally (Edge Function or script)';
-  END IF;
-END $$;

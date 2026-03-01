@@ -15,6 +15,7 @@ import {
   timestamp,
   unique,
   uuid,
+  vector,
 } from 'drizzle-orm/pg-core';
 
 // Reference to Supabase auth schema
@@ -168,6 +169,10 @@ export const vietnameseFoodComposition = pgTable(
     vitaminHMcg: numeric('vitamin_h_mcg'),
 
     lastVerified: date('last_verified'),
+
+    // Search infrastructure (populated by triggers/scripts, not app code)
+    searchText: text('search_text'),
+    embedding: vector('embedding', { dimensions: 768 }),
   },
   (table) => [
     check(
