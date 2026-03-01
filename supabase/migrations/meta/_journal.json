@@ -15,6 +15,27 @@
       "when": 1772126743392,
       "tag": "20260226172553_add_food_composition",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1772293226722,
+      "tag": "20260228154026_add_meals_weight_tables",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1772296200000,
+      "tag": "20260228155000_add_search_columns",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1772297100000,
+      "tag": "20260228155500_add_search_text_ascii",
+      "breakpoints": true
     }
   ]
 }

@@ -17,6 +17,22 @@ This is a Next.js 16 application using the App Router with TypeScript, React 19,
 - `bunx @biomejs/biome check --write .` - Run Biome and auto-fix issues
 - `bunx @biomejs/biome format --write .` - Format code with Biome
 
+### Database
+- `bun db:generate` - Generate Drizzle migration from schema changes
+- `bun db:migrate` - Apply migrations locally via Drizzle
+- `bun db:studio` - Open Drizzle Studio (DB browser)
+- `bun dbr:reset` - Reset remote DB + re-run migrations + seed + backfill embeddings (interactive `y` confirm)
+- `bun dbr:reset:nobackfill` - Reset remote DB without embedding backfill
+- `bun dbr:push` - Push local migrations to remote
+- `bun dbr:pull` - Pull remote schema changes
+- `bun dbr:diff` - Diff local schema against remote
+- `bun dbr:status` - List migration status on remote
+
+### Testing
+- `bun test` - Run all tests via Vitest
+- `bun test:watch` - Run tests in watch mode
+- `bun --env-file=.env.local vitest run lib/db/__tests__/` - Run DB search tests (requires remote DB + DATABASE_URL)
+
 ## Architecture
 
 ### Project Structure
@@ -24,8 +40,14 @@ This is a Next.js 16 application using the App Router with TypeScript, React 19,
 - `/components/ui` - shadcn/ui components (managed by CLI, avoid manual edits)
 - `/components/landing-page` - Custom landing page components
 - `/lib` - Shared utilities (includes `cn()` helper)
+- `/lib/db` - Drizzle ORM schema, client, and utilities
+- `/lib/db/__tests__` - SQL-level DB tests (run against remote Supabase)
 - `/hooks` - Custom React hooks
 - `/public` - Static assets
+- `/scripts` - One-off scripts (embedding backfill, data extraction)
+- `/supabase/migrations` - All SQL migrations (Drizzle-generated + manual)
+- `/supabase/seed.sql` - Seed data (526 food composition records)
+- `/docs` - Project documentation (PRD, DATA.md, DATABASE.md)
 
 ### Import Aliases
 TypeScript path aliases are configured:
@@ -94,6 +116,10 @@ The following rules are intentionally disabled in Biome:
 - **Styling**: Tailwind CSS, tailwind-merge, clsx, CVA
 - **Date**: date-fns, react-day-picker
 - **Charts**: Recharts
+- **Database**: Drizzle ORM (`drizzle-orm/postgres-js`), `postgres` (postgres.js driver)
+- **Auth**: Supabase SSR (`@supabase/ssr`, `@supabase/supabase-js`)
+- **AI/Embeddings**: `@google/genai` (Gemini API)
+- **Testing**: Vitest
 
 ### Package Manager
 Project uses Bun for package management and running scripts.
@@ -152,3 +178,54 @@ Each record follows this shape:
 ```
 
 **Key conventions**: Unit suffixes (`_g`, `_mg`, `_mcg`, `_kcal`) on all nutrient keys. `null` = no data in source PDF, `0.0` = explicitly zero.
+
+## Database Architecture
+
+Full documentation in `docs/DATABASE.md`. Key points for agents:
+
+### Two-Domain Model (Do Not Mix)
+- **Domain A (Drizzle)**: Tables, columns, types, defaults, FKs, indexes, CHECKs → edit `lib/db/schema.ts` → `bun db:generate`
+- **Domain B (Manual SQL)**: RLS, policies, functions, triggers, extensions → hand-write in `supabase/migrations/`
+- Drizzle migrations MUST be timestamped before manual migrations that reference their columns
+
+### Ingredient Search Pipeline
+1. **Primary**: `fuzzy_match_ingredients()` — pg_trgm trigram matching (free, instant)
+2. **Fallback**: `match_ingredients()` — pgvector cosine similarity (needs Gemini API for query embedding)
+3. Vietnamese diacritics are **semantically load-bearing** — the function auto-routes queries with diacritics to `search_text` and queries without to `search_text_ascii`
+
+### Critical Supabase Quirks
+- Migrations using pgvector/pg_trgm need `SET search_path TO public, extensions;` at top
+- `bun` does NOT auto-load `.env.local` for scripts — always use `--env-file=.env.local`
+- `DATABASE_URL` password may have special chars — use `encodeDbUrl()` from `@/lib/db`
+
+## Lessons Learned (Phase 1)
+
+These are hard-won lessons from Phase 1 development. Follow them to avoid repeating mistakes.
+
+### Schema & Migration Workflow
+- **Always edit `lib/db/schema.ts` first** for any column changes, then generate. Never hand-add columns in SQL migrations.
+- **Test migrations against the remote DB early**. Local Supabase and remote Supabase behave differently (search_path, extensions schema, available functions).
+- **After `bun dbr:push` fails mid-migration**, repair with: `supabase migration repair --status reverted <timestamp> --linked`, then fix and re-push.
+- **Drizzle snapshot/journal must stay in sync** when reordering timestamps. If they drift, `drizzle-kit generate` produces broken diffs.
+
+### Vietnamese Text Search
+- **Never normalize (unaccent) both the query AND the data columns simultaneously.** Vietnamese diacritics are load-bearing: bò=beef, bơ=butter, bổ=nutritious. Collapsing diacritics on both sides causes semantic collisions.
+- **Short Vietnamese words** (tôm, bún, gạo) have inherently low trigram similarity (0.14–0.24) when matched against longer `search_text` strings. Use a threshold of 0.15 (not 0.25+) or short queries will return nothing.
+- **pg_trgm can return "wrong" matches** (e.g., "cơm trắng" matches items containing "trắng" that aren't rice). This is expected — the LLM layer judges result quality, the DB layer just retrieves candidates.
+
+### Testing Against Live DB
+- **DB tests need `--env-file=.env.local`** since Vitest doesn't auto-load it.
+- **Write assertions against realistic data**, not ideal thresholds. Run a query manually first to calibrate expected similarity scores.
+- **Test both the happy path AND the routing logic** — diacritic detection, ASCII fallback, threshold filtering.
+
+### Embedding & API Gotchas
+- **`text-embedding-004` is deprecated** (since Jan 2026). Use `gemini-embedding-001` (768 dims).
+- **Batch operations need explicit rate limiting**. The backfill script uses 35s delays between batches of 50 for the 100 req/min free tier.
+- **Parse 429 retry-after headers** from Gemini API responses for accurate backoff timing.
+
+### Agent Workflow Improvements
+- **Read docs/DATABASE.md before any DB work.** It contains the two-domain model, migration naming rules, and all known quirks.
+- **When a user says "run X", check `package.json` scripts first.** Don't assume a script exists; if it doesn't, suggest adding one.
+- **Commit incrementally, not in one big batch.** Each logical change (schema, migration, search function, tests) should be its own commit for easier rollback.
+- **When editing test files, run the tests immediately after each edit** to catch issues early rather than batching edits and debugging multiple failures at once.
+- **For Supabase interactive commands** (`dbr:reset`), use `bash mode="async"` with `write_bash` to send the `y` confirmation.

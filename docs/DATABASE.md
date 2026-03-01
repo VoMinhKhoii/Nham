@@ -58,6 +58,71 @@ Supabase uses timestamp-based filenames: `YYYYMMDDHHMMSS_description.sql`
 | `20260224100032_rls_and_triggers.sql` | B (Manual) | RLS policies + `handle_new_user` trigger |
 | `20260226172553_add_food_composition.sql` | A (Drizzle) | `vietnamese_food_composition` table with 38 columns |
 | `20260226172614_food_composition_rls.sql` | B (Manual) | Read-only RLS policy for food composition data |
+| `20260228154026_add_meals_weight_tables.sql` | A (Drizzle) | `meals`, `meal_items`, `body_weight_log`, `unmatched_ingredients` tables |
+| `20260228155000_add_search_columns.sql` | A (Drizzle) | `search_text` + `embedding` (vector(768)) columns on food composition |
+| `20260228155119_pgvector_embeddings.sql` | B (Manual) | pgvector extension, HNSW index, `match_ingredients()` function |
+| `20260228155500_add_search_text_ascii.sql` | A (Drizzle) | `search_text_ascii` column on food composition |
+| `20260228155945_rls_new_tables.sql` | B (Manual) | RLS policies + `updated_at` triggers for meals/weight tables |
+| `20260301022622_pg_trgm_ingredient_search.sql` | B (Manual) | pg_trgm + unaccent extensions, dual GIN indexes, `fuzzy_match_ingredients()` with diacritic routing |
+
+**Migration ordering matters**: Drizzle migrations that add columns must be timestamped BEFORE manual migrations that reference those columns (e.g., `search_text` column must exist before the trgm migration creates a GIN index on it).
+
+## Ingredient Search Architecture
+
+The app uses a two-tier search pipeline to match user meal descriptions to the 526 food composition records:
+
+### Tier 1: pg_trgm Fuzzy Search (Primary)
+
+**Function**: `fuzzy_match_ingredients(query_text, match_count, threshold)`
+
+- Free, instant, no external API calls
+- Uses trigram similarity (`pg_trgm`) against concatenated name fields
+- Handles partial matches, typos, and cooking method prefixes
+
+#### Diacritic Routing (Critical Design Decision)
+
+Vietnamese diacritics are **semantically load-bearing**: `bò` = beef, `bơ` = butter, `bổ` = nutritious. The function detects whether the query contains diacritics and routes to the correct search column:
+
+| Query type | Detection | Column searched | Example |
+|---|---|---|---|
+| Has diacritics | `unaccent(query) != query` | `search_text` (original Vietnamese) | "Nước mắm" → exact match |
+| No diacritics | `unaccent(query) == query` | `search_text_ascii` (lowered + unaccented) | "nuoc mam" → finds "Nước mắm" |
+
+**Never normalize both sides** — this causes semantic collisions (bò/bơ/bổ would all collapse to "bo").
+
+#### Search Text Columns
+
+| Column | Content | Purpose |
+|---|---|---|
+| `search_text` | `name_primary \| name_alt \| name_en` | Diacritic-aware trigram search |
+| `search_text_ascii` | `lower(unaccent(search_text))` | No-diacritic fallback search |
+
+Both columns are populated by a trigger on INSERT/UPDATE.
+
+### Tier 2: pgvector Cosine Similarity (Fallback)
+
+**Function**: `match_ingredients(query_embedding, match_count, threshold)`
+
+- Used when trgm fails (e.g., synonyms: "cơm trắng" → "Gạo tẻ máy")
+- Requires embedding generation via external API (Gemini)
+- HNSW index for fast approximate nearest neighbor search
+
+#### Embeddings
+
+- **Model**: `gemini-embedding-001` (768 dimensions)
+- **Embedding text**: `name_primary | name_alt | name_en | type_vn | type_en` (food group categories add semantic context)
+- **Backfill script**: `scripts/backfill_embeddings.ts`
+- All 526 rows have embeddings pre-populated
+
+### Pipeline Flow (App-Level)
+
+```
+User describes meal → LLM decomposes into ingredients
+  → For each ingredient:
+    1. fuzzy_match_ingredients(name) — instant, free
+    2. If no good trgm match → generate embedding → match_ingredients(embedding)
+    3. LLM picks the best candidate from results
+```
 
 ## DB Client Usage
 
@@ -86,13 +151,64 @@ The `db` instance uses `postgres-js` under the hood with `DATABASE_URL` from env
 
 | Command | Description |
 |---------|-------------|
-| `bun dbr:reset` | Reset linked remote DB, re-run migrations + seed.sql |
+| `bun dbr:reset` | Reset linked remote DB, re-run migrations + seed + backfill embeddings |
+| `bun dbr:reset:nobackfill` | Reset linked remote DB without embedding backfill |
 | `bun dbr:push` | Push local migrations to remote |
 | `bun dbr:pull` | Pull remote schema changes into local migrations |
 | `bun dbr:diff` | Diff local schema against remote |
 | `bun dbr:status` | List migration status on remote |
 
+### Testing
+
+| Command | Description |
+|---------|-------------|
+| `bun test` | Run all tests via Vitest |
+| `bun test:watch` | Run tests in watch mode |
+| `bun --env-file=.env.local vitest run lib/db/__tests__/` | Run DB-level search tests (requires remote DB) |
+
+### Scripts
+
+| Command | Description |
+|---------|-------------|
+| `bun --env-file=.env.local scripts/backfill_embeddings.ts` | Backfill embeddings via Gemini API (rate-limited) |
+
 ## Seeding Reference Data
 
-Supabase runs `supabase/seed.sql` automatically on `bun dbr:reset`.
+`bun dbr:reset` runs `supabase db reset --linked` which applies all migrations and runs `supabase/seed.sql` automatically.
 The seed file inserts all 526 VTN FCT 2007 records into `vietnamese_food_composition`.
+
+**After seeding**, `dbr:reset` automatically runs the embedding backfill via Gemini API. This takes ~5 minutes due to rate limiting (100 req/min free tier). Use `dbr:reset:nobackfill` to skip this step if embeddings are not needed.
+
+## Known Quirks & Gotchas
+
+### Supabase Remote DB
+
+- **`dbr:push` search_path**: The CLI login role doesn't have `extensions` schema on search_path. Migrations using pgvector/pg_trgm must include `SET search_path TO public, extensions;` at the top.
+- **No `ai` schema**: This project does NOT have the Supabase AI schema — no in-database embedding generation. Use the external backfill script instead.
+- **`dbr:push` doesn't run seed.sql** — only `dbr:reset` does.
+- **`dbr:reset` (and `dbr:reset:nobackfill`)** requires interactive `y` confirmation.
+- **Failed migration repair**: `supabase migration repair --status reverted <timestamp> --linked`
+
+### Drizzle + Supabase Coexistence
+
+- Drizzle migrations must be timestamped **before** manual migrations that reference their columns.
+- When reordering, update `meta/_journal.json` entries AND rename `meta/<timestamp>_snapshot.json` files.
+- `migrations.prefix: 'supabase'` in `drizzle.config.ts` enables timestamp-based naming.
+
+### PostgreSQL
+
+- **Generated columns** cannot use `array_to_string()` (not IMMUTABLE in Supabase) — use triggers instead.
+- **TRUNCATE** on tables with FK references needs `CASCADE` — the seed file avoids TRUNCATE entirely.
+- `unaccent()` requires the `unaccent` extension to be created first.
+
+### Bun
+
+- `bun` does NOT auto-load `.env.local` for scripts — use `--env-file=.env.local` flag.
+- `DATABASE_URL` password may contain `?` or `#` — use `encodeDbUrl()` from `@/lib/db` to safely encode.
+
+### Embeddings (Gemini)
+
+- **Model**: `gemini-embedding-001` — sunset Jul 14, 2026. `text-embedding-004` is deprecated.
+- **Free tier**: 100 requests/minute, 1000 requests/day **per project** (not per key).
+- Each text in a batch counts as a separate request.
+- The backfill script uses 35s delay between batches of 50 to stay under limits.
